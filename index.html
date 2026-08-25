@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktive Karte für den Dorfflohmarkt Urbar 2026">
+  <title>Dorfflohmarkt Urbar 2026</title>
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3ynhHdqRZt5JkFvR0G3pM5QxVfJbM="
+    crossorigin=""
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Dorfflohmarkt</p>
+      <h1>Urbar 2026</h1>
+    </div>
+    <p id="stand-count" class="stand-count" aria-live="polite">Noch keine Stände eingetragen</p>
+  </header>
+
+  <main>
+    <section class="map-section" aria-labelledby="map-heading">
+      <h2 id="map-heading" class="visually-hidden">Karte der Flohmarktstände</h2>
+      <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
+      <noscript>Für die interaktive Karte muss JavaScript aktiviert sein.</noscript>
+    </section>
+
+    <section class="stand-list-section" aria-labelledby="list-heading">
+      <h2 id="list-heading">Stände</h2>
+      <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
+      <ol id="stand-list" class="stand-list"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></p>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="standdaten.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
