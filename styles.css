@@ -1,0 +1,184 @@
+:root {
+  --green: #285943;
+  --green-dark: #193d2e;
+  --cream: #fffaf0;
+  --paper: #ffffff;
+  --ink: #17211c;
+  --muted: #637169;
+  --line: #dbe4de;
+  --shadow: 0 8px 24px rgb(25 61 46 / 12%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.site-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--green-dark);
+  color: white;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #cfe5d8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(1.45rem, 5vw, 2.25rem);
+  line-height: 1.1;
+}
+
+.stand-count {
+  margin-bottom: 0;
+  color: #e8f2ec;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+main {
+  display: grid;
+  min-height: calc(100vh - 10rem);
+}
+
+#map {
+  width: 100%;
+  height: 58vh;
+  min-height: 22rem;
+  background: #e8eee9;
+}
+
+.stand-list-section {
+  padding: 1rem;
+  background: var(--paper);
+}
+
+.stand-list-section h2 {
+  margin-bottom: 0.75rem;
+}
+
+#empty-message {
+  color: var(--muted);
+}
+
+.stand-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stand-card {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.stand-card:focus-visible {
+  outline: 3px solid #e0a72f;
+  outline-offset: 2px;
+}
+
+.stand-card strong,
+.stand-card span {
+  display: block;
+}
+
+.stand-card span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.marker-number {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+footer {
+  padding: 0.75rem 1rem;
+  background: var(--green-dark);
+  color: #dce9e1;
+  font-size: 0.78rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 800px) {
+  .site-header {
+    padding: 1.25rem 2rem;
+  }
+
+  main {
+    grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+  }
+
+  #map {
+    height: 100%;
+    min-height: calc(100vh - 9rem);
+  }
+
+  .stand-list-section {
+    max-height: calc(100vh - 9rem);
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+}
