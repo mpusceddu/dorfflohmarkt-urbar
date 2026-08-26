@@ -1,14 +1,20 @@
 # Dorfflohmarkt Urbar 2026
 
+![Projektbanner Dorfflohmarkt Urbar 2026](docs/project-banner.svg)
+
 Interaktive Karte für die Stände des Dorfflohmarkts in **56182 Urbar**.
 
 Die Anwendung zeigt die teilnehmenden Standorte auf einer Karte und zusätzlich in einer übersichtlichen Liste. Sie ist für Smartphones, Tablets und Desktop-Rechner ausgelegt und wird als statische Website über GitHub Pages veröffentlicht.
 
-![Vorschau der interaktiven Karte für den Dorfflohmarkt Urbar 2026](docs/preview.svg)
+> Ein digitales Bürgerprojekt ohne App-Installation und ohne Benutzerkonto: Link öffnen, Stand finden und losstöbern.
 
 ## Live-Version
 
-[Interaktive Karte öffnen](https://mpusceddu.github.io/dorfflohmarkt-urbar/)
+[**Interaktive Karte öffnen**](https://mpusceddu.github.io/dorfflohmarkt-urbar/)
+
+## Vorschau
+
+![Vorschau der interaktiven Karte für den Dorfflohmarkt Urbar 2026](docs/preview.svg)
 
 ## Funktionen
 
@@ -87,6 +93,13 @@ Wichtig: Auch gelöschte Daten können in der Versionsgeschichte eines öffentli
 ## Projektstatus
 
 In Vorbereitung für den Dorfflohmarkt Urbar 2026. Die Standorte werden ergänzt, sobald die endgültigen Anmeldedaten vorliegen.
+
+## Projekt und Kontakt
+
+Konzipiert als praktisches digitales Bürgerprojekt für Urbar.
+
+- [Marco Pusceddu auf GitHub](https://github.com/mpusceddu)
+- [Persönliche Website](https://marcopusceddu.de/)
 
 ## Kartendaten
 
