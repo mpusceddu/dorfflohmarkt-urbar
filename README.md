@@ -4,17 +4,11 @@ Interaktive Karte für die Stände des Dorfflohmarkts in **56182 Urbar**.
 
 Die Anwendung zeigt die teilnehmenden Standorte auf einer Karte und zusätzlich in einer übersichtlichen Liste. Sie ist für Smartphones, Tablets und Desktop-Rechner ausgelegt und wird als statische Website über GitHub Pages veröffentlicht.
 
+![Vorschau der interaktiven Karte für den Dorfflohmarkt Urbar 2026](docs/preview.svg)
+
 ## Live-Version
 
 [Interaktive Karte öffnen](https://mpusceddu.github.io/dorfflohmarkt-urbar/)
-
-<!--
-Empfehlung:
-Einen Screenshot der Karte als docs/screenshot.png hochladen
-und anschließend diese Zeile aktivieren:
-
-![Screenshot der interaktiven Karte](docs/screenshot.png)
--->
 
 ## Funktionen
 
