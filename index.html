@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260827-1">
+  <link rel="stylesheet" href="styles.css?v=20260827-2">
 </head>
 <body>
   <header class="site-header">
@@ -79,6 +79,16 @@
         <p id="stand-count" class="stand-count" aria-live="polite">Noch keine Stände eingetragen</p>
       </div>
 
+      <div class="location-tools">
+        <button id="locate-button" class="location-button" type="button">
+          <span class="location-symbol" aria-hidden="true">◎</span>
+          Meinen Standort anzeigen
+        </button>
+        <p id="location-status" class="location-status" aria-live="polite">
+          Standort wird nur nach Ihrer Freigabe bestimmt und nicht gespeichert.
+        </p>
+      </div>
+
       <div class="map-layout">
         <section class="map-section" aria-label="Karte der Flohmarktstände">
           <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
@@ -105,7 +115,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="standdaten.js?v=20260827-1"></script>
-  <script src="app.js?v=20260827-1"></script>
+  <script src="standdaten.js?v=20260827-2"></script>
+  <script src="app.js?v=20260827-2"></script>
 </body>
 </html>
