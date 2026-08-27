@@ -570,3 +570,137 @@ footer p {
     scroll-behavior: auto;
   }
 }
+
+
+/* Orte mit einem oder mehreren Ständen */
+.location-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: white;
+  cursor: pointer;
+}
+
+.location-card:hover {
+  border-color: var(--teal);
+}
+
+.location-card:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.location-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.location-card-heading > strong {
+  color: var(--blue-dark);
+}
+
+.location-address {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.place-type {
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 0.22rem 0.48rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.place-type-private {
+  background: #e7f0f6;
+  color: var(--blue-dark);
+}
+
+.place-type-group {
+  background: #dff0e8;
+  color: #226457;
+}
+
+.location-stands,
+.popup-stands {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.location-stands > li {
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--line);
+}
+
+.stand-line,
+.stand-offer,
+.feature-list {
+  display: block;
+}
+
+.stand-line > strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.stand-offer {
+  margin-top: 0.12rem;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.feature-list {
+  margin-top: 0.35rem;
+}
+
+.feature-badge {
+  display: inline-flex;
+  margin: 0 0.25rem 0.2rem 0;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  background: #edf2f2;
+  color: var(--ink);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.feature-cake {
+  background: #fff0d2;
+  color: #995014;
+}
+
+.marker-group {
+  background: var(--teal);
+  font-size: 0.7rem;
+}
+
+.location-popup {
+  display: grid;
+  gap: 0.28rem;
+  min-width: 13rem;
+}
+
+.location-popup-title {
+  color: var(--blue-dark);
+  font-size: 1rem;
+}
+
+.location-popup .place-type {
+  width: max-content;
+  margin-top: 0.2rem;
+}
+
+.popup-stands > li {
+  padding-top: 0.45rem;
+  border-top: 1px solid #dfe6e7;
+}
