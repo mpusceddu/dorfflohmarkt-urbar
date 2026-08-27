@@ -309,22 +309,6 @@ nav .nav-highlight:focus-visible {
   margin-bottom: 1rem;
 }
 
-.location-requirement {
-  width: max-content;
-  max-width: 100%;
-  margin-bottom: 0.85rem;
-  padding: 0.55rem 0.75rem;
-  border-left: 4px solid var(--orange);
-  border-radius: 0.35rem;
-  background: #fff4e8;
-  color: #7d431f;
-  font-size: 0.88rem;
-}
-
-.location-requirement strong {
-  color: var(--orange-dark);
-}
-
 .location-button {
   display: inline-flex;
   align-items: center;
