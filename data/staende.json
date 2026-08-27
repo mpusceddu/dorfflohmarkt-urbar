@@ -1,0 +1,19 @@
+[
+  {
+    "nummer": 1,
+    "adresse": "Bornstraße 25, 56182 Urbar",
+    "standortName": "Bürgerhaus Urbar",
+    "standortTyp": "mehrfach",
+    "lat": 50.3798707,
+    "lng": 7.6249404,
+    "aktiv": true
+  },
+  {
+    "nummer": 2,
+    "adresse": "Am Rheineck 30, 56182 Urbar",
+    "standortTyp": "privat",
+    "lat": 50.3780683,
+    "lng": 7.6222659,
+    "aktiv": true
+  }
+]
