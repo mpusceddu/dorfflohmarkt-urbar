@@ -407,6 +407,14 @@ nav .nav-highlight:focus-visible {
   margin-bottom: 0.75rem;
 }
 
+.stand-list-section h4 {
+  margin: 1rem 0 0.65rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 #empty-message {
   color: var(--muted);
 }
@@ -458,6 +466,113 @@ nav .nav-highlight:focus-visible {
   color: white;
   font-size: 0.78rem;
   font-weight: 850;
+}
+
+.service-list-section {
+  margin-top: 1.5rem;
+  padding-top: 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.service-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-card {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #f8fbfa;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  border-color: var(--teal);
+}
+
+.service-card:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.service-card-symbol,
+.service-marker {
+  display: grid;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 0.55rem;
+  box-shadow: 0 2px 9px rgb(0 0 0 / 25%);
+  color: white;
+  font-weight: 900;
+}
+
+.service-card-symbol {
+  width: 2.25rem;
+  height: 2.25rem;
+  align-self: start;
+  font-size: 0.9rem;
+}
+
+.service-marker {
+  width: 2.15rem;
+  height: 2.15rem;
+  font-size: 0.85rem;
+}
+
+.service-card-symbol-parkplatz,
+.service-marker-parkplatz {
+  background: var(--blue);
+}
+
+.service-card-symbol-verpflegung,
+.service-marker-verpflegung {
+  background: var(--orange-dark);
+}
+
+.service-card-copy,
+.service-card-copy > span {
+  display: block;
+}
+
+.service-card-copy > strong {
+  color: var(--blue-dark);
+  font-size: 0.9rem;
+}
+
+.service-card-copy > span:not(.service-type) {
+  margin-top: 0.12rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.service-type {
+  width: max-content;
+  margin-top: 0.4rem;
+  padding: 0.18rem 0.42rem;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 850;
+}
+
+.service-type-parkplatz {
+  background: #e1edf5;
+  color: var(--blue-dark);
+}
+
+.service-type-verpflegung {
+  background: #fff0d2;
+  color: #995014;
+}
+
+.service-popup .service-type {
+  display: inline-flex;
 }
 
 footer {

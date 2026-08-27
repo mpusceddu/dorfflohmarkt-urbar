@@ -10,7 +10,7 @@ Die Anwendung zeigt die teilnehmenden Standorte auf einer Karte und zusätzlich 
 
 ## Live-Version
 
-[**Interaktive Karte öffnen**](https://mpusceddu.github.io/dorfflohmarkt-urbar/)
+[**Interaktive Karte öffnen**](https://dorfflohmarkt-urbar.de/)
 
 ## Vorschau
 
@@ -19,6 +19,9 @@ Die Anwendung zeigt die teilnehmenden Standorte auf einer Karte und zusätzlich 
 ## Funktionen
 
 - nummerierte Standorte auf einer interaktiven Karte
+- gemeinsame Darstellung mehrerer Stände an einem Ort
+- eigene Symbole für Foodstation und Parkplätze
+- Anzeige des aktuellen Standorts nach ausdrücklicher Freigabe
 - Kartendarstellung mit Leaflet und OpenStreetMap
 - zusätzliche Standliste unterhalb der Karte
 - Bedienung per Maus, Touch und Tastatur
@@ -40,30 +43,45 @@ Die Anwendung zeigt die teilnehmenden Standorte auf einer Karte und zusätzlich 
 
 Die Standorte werden in der Datei [`standdaten.js`](standdaten.js) gepflegt.
 
-Beispiel:
+Ein Ort kann einen oder mehrere Stände enthalten:
 
 ```javascript
 {
-  nummer: 3,
+  id: "beispiel-12",
   adresse: "Beispielstraße 12, 56182 Urbar",
-  angebot: "Bücher, Spielzeug und Haushaltswaren",
+  typ: "privat",
   lat: 50.000000,
-  lng: 7.000000
+  lng: 7.000000,
+  staende: [
+    {
+      nummer: 3,
+      angebot: "Bücher, Spielzeug und Haushaltswaren"
+    }
+  ]
 }
 ```
 
-### Pflichtfelder
+Für öffentliche Orte mit mehreren Ständen wird `typ: "mehrfach"` verwendet. Die sichtbare Karte bezeichnet solche Orte neutral als „Standort mit mehreren Ständen“.
 
-- `nummer`
+Foodstationen und Parkplätze werden getrennt im Array `SERVICEPUNKTE` gepflegt. Sie besitzen keine Standnummer und werden nicht zur Zahl der Flohmarktstände hinzugerechnet.
+
+### Pflichtfelder eines Standorts
+
+- `id`
 - `adresse`
-
-### Optionale Felder
-
-- `angebot`
+- `typ`
 - `lat`
 - `lng`
+- `staende`
 
-Ohne Koordinaten erscheint ein Stand weiterhin in der Liste, aber nicht als Marker auf der Karte.
+### Pflichtfeld eines Standes
+
+- `nummer`
+
+### Optionale Felder eines Standes
+
+- `angebot`
+- `besonderheiten`
 
 ## Lokal testen
 
