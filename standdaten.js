@@ -68,7 +68,7 @@ const SERVICEPUNKTE = [
   {
     id: "parkplatz-besselicher-feld",
     name: "Parkplatz Besselicher Feld",
-    adresse: "Bei Thilmann Brot, Beginenstraße 2, 56182 Urbar",
+    adresse: "Beginenstraße 2, 56182 Urbar",
     typ: "parkplatz",
     lat: 50.3849565,
     lng: 7.6237414
