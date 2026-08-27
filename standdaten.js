@@ -62,16 +62,16 @@ const SERVICEPUNKTE = [
     name: "Foodstation",
     adresse: "Katholische Kita St. Peter und Paul, In den Büngerten 8, 56182 Urbar",
     typ: "verpflegung",
-    lat: 50.3814375,
-    lng: 7.6239305
+    lat: 50.3814834,
+    lng: 7.6244177
   },
   {
     id: "parkplatz-besselicher-feld",
     name: "Parkplatz Besselicher Feld",
-    adresse: "Urbarer Straße, 56182 Urbar",
+    adresse: "Bei Thilmann Brot, Beginenstraße 2, 56182 Urbar",
     typ: "parkplatz",
-    lat: 50.3849445,
-    lng: 7.6230661
+    lat: 50.3849565,
+    lng: 7.6237414
   },
   {
     id: "parkplatz-friedhof",

@@ -327,14 +327,22 @@
   }
 
   function showLocationError(error) {
+    const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const permissionDeniedMessage = isAppleMobile
+      ? "Standortzugriff ist blockiert. Auf dem iPhone: Seitenmenü in der Adressleiste öffnen → Website-Einstellungen → Standort → Erlauben. Danach diese Seite neu laden."
+      : "Standortzugriff ist blockiert. Bitte erlauben Sie ihn in den Website-Einstellungen Ihres Browsers und laden Sie die Seite anschließend neu.";
     const messages = {
-      1: "Standortfreigabe wurde abgelehnt. Sie können sie in den Browser-Einstellungen erlauben.",
+      1: permissionDeniedMessage,
       2: "Der Standort konnte gerade nicht ermittelt werden.",
       3: "Die Standortbestimmung hat zu lange gedauert. Bitte versuchen Sie es erneut."
     };
 
     locateButton.disabled = false;
     locateButton.removeAttribute("aria-busy");
+    if (error.code === 1) {
+      locateButton.innerHTML =
+        '<span class="location-symbol" aria-hidden="true">◎</span> Standort erneut versuchen';
+    }
     setLocationStatus(
       messages[error.code] || "Der Standort konnte nicht ermittelt werden.",
       "error"
