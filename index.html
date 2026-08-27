@@ -3,39 +3,101 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interaktive Karte für den Dorfflohmarkt Urbar 2026">
-  <title>Dorfflohmarkt Urbar 2026</title>
+  <meta name="description" content="Alle Informationen und die interaktive Karte zum 5. Dorfflohmarkt in Urbar am 5. September 2026.">
+  <meta name="theme-color" content="#174d72">
+  <meta property="og:title" content="5. Dorfflohmarkt in Urbar">
+  <meta property="og:description" content="Am 5. September 2026 im ganzen Dorf. Weitere Informationen und interaktive Karte.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mpusceddu.github.io/dorfflohmarkt-urbar/assets/dorfflohmarkt-urbar-2026.jpg">
+  <title>5. Dorfflohmarkt Urbar · 5. September 2026</title>
 
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260825-2">
+  <link rel="stylesheet" href="styles.css?v=20260827-1">
 </head>
 <body>
   <header class="site-header">
-    <div>
-      <p class="eyebrow">Dorfflohmarkt</p>
-      <h1>Urbar 2026</h1>
-    </div>
-    <p id="stand-count" class="stand-count" aria-live="polite">Noch keine Stände eingetragen</p>
+    <a class="brand" href="#start" aria-label="Dorfflohmarkt Urbar – zum Seitenanfang">
+      <span class="brand-kicker">5. Dorfflohmarkt</span>
+      <span class="brand-name">Urbar 2026</span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#start">Start</a>
+      <a href="#infos">Infos</a>
+      <a class="nav-highlight" href="#karte">Interaktive Karte</a>
+    </nav>
   </header>
 
   <main>
-    <section class="map-section" aria-labelledby="map-heading">
-      <h2 id="map-heading" class="visually-hidden">Karte der Flohmarktstände</h2>
-      <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
-      <noscript>Für die interaktive Karte muss JavaScript aktiviert sein.</noscript>
+    <section id="start" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Save the date</p>
+        <h1 id="hero-title">Das ganze Dorf wird zum Flohmarkt.</h1>
+        <p class="hero-date">Samstag, 5. September 2026</p>
+        <p class="hero-intro">Stöbern, entdecken und miteinander ins Gespräch kommen – mitten in Urbar.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#karte">Karte ansehen</a>
+          <a class="button button-secondary" href="#infos">Mehr erfahren</a>
+        </div>
+      </div>
+      <figure class="hero-poster">
+        <img src="assets/dorfflohmarkt-urbar-2026.jpg" alt="Ankündigungsplakat: 5. Dorf-Flohmarkt in Urbar am 5. September 2026">
+      </figure>
     </section>
 
-    <section class="stand-list-section" aria-labelledby="list-heading">
-      <h2 id="list-heading">Stände</h2>
-      <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
-      <ol id="stand-list" class="stand-list"></ol>
+    <section id="infos" class="info-section" aria-labelledby="info-title">
+      <div>
+        <p class="eyebrow">Im ganzen Dorf</p>
+        <h2 id="info-title">Ein Tag zum Stöbern und Begegnen</h2>
+      </div>
+      <div class="info-grid">
+        <article>
+          <span class="info-number">01</span>
+          <h3>Termin vormerken</h3>
+          <p>Der 5. Dorfflohmarkt findet am Samstag, 5. September 2026, in Urbar statt.</p>
+        </article>
+        <article>
+          <span class="info-number">02</span>
+          <h3>Stände entdecken</h3>
+          <p>Die endgültigen Standorte und Angebote werden nach Freigabe der Veranstalter ergänzt.</p>
+        </article>
+        <article>
+          <span class="info-number">03</span>
+          <h3>Karte mitnehmen</h3>
+          <p>Die interaktive Karte ist für Smartphone, Tablet und Rechner ausgelegt – ohne App und ohne Anmeldung.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="karte" class="map-area" aria-labelledby="map-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Orientierung</p>
+          <h2 id="map-title">Interaktive Karte</h2>
+        </div>
+        <p id="stand-count" class="stand-count" aria-live="polite">Noch keine Stände eingetragen</p>
+      </div>
+
+      <div class="map-layout">
+        <section class="map-section" aria-label="Karte der Flohmarktstände">
+          <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
+          <noscript>Für die interaktive Karte muss JavaScript aktiviert sein.</noscript>
+        </section>
+
+        <aside class="stand-list-section" aria-labelledby="list-heading">
+          <h3 id="list-heading">Stände</h3>
+          <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
+          <ol id="stand-list" class="stand-list"></ol>
+        </aside>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></p>
+    <p><strong>Dorfflohmarkt Urbar 2026</strong></p>
+    <p>Weitere Informationen folgen.</p>
+    <p class="footer-small">Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></p>
   </footer>
 
   <script
@@ -43,7 +105,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="standdaten.js?v=20260825-2"></script>
-  <script src="app.js?v=20260825-2"></script>
+  <script src="standdaten.js?v=20260827-1"></script>
+  <script src="app.js?v=20260827-1"></script>
 </body>
 </html>
