@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260827-8">
+  <link rel="stylesheet" href="styles.css?v=20260827-9">
 </head>
 <body>
   <header class="site-header">
@@ -96,14 +96,22 @@
         </section>
 
         <aside class="stand-list-section" aria-labelledby="list-heading">
-          <h3 id="list-heading">Stände &amp; Orientierung</h3>
-          <h4>Flohmarktstände</h4>
-          <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
-          <ol id="stand-list" class="stand-list"></ol>
-          <section class="service-list-section" aria-labelledby="service-heading">
-            <h4 id="service-heading">Verpflegung &amp; Parken</h4>
-            <ul id="service-list" class="service-list"></ul>
-          </section>
+          <h3 id="list-heading" class="visually-hidden">Karteninformationen</h3>
+
+          <details class="map-accordion">
+            <summary>Stände &amp; Orientierung</summary>
+            <div class="map-accordion-content">
+              <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
+              <ol id="stand-list" class="stand-list"></ol>
+            </div>
+          </details>
+
+          <details class="map-accordion">
+            <summary>Verpflegung &amp; Parken</summary>
+            <div class="map-accordion-content">
+              <ul id="service-list" class="service-list"></ul>
+            </div>
+          </details>
         </aside>
       </div>
     </section>
@@ -120,7 +128,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="standdaten.js?v=20260827-8"></script>
-  <script src="app.js?v=20260827-8"></script>
+  <script src="standdaten.js?v=20260827-9"></script>
+  <script src="app.js?v=20260827-9"></script>
 </body>
 </html>
