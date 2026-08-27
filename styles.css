@@ -301,6 +301,87 @@ nav .nav-highlight:focus-visible {
   text-align: right;
 }
 
+.location-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--blue-dark);
+  box-shadow: 0 5px 16px rgb(23 77 114 / 18%);
+  color: white;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.location-button:hover,
+.location-button:focus-visible {
+  background: var(--blue);
+}
+
+.location-button:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+
+.location-button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.location-symbol {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.location-status {
+  flex: 1 1 18rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.location-status[data-state="success"] {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.location-status[data-state="error"] {
+  color: #a63c22;
+  font-weight: 700;
+}
+
+.user-location-marker {
+  display: grid;
+  width: 1.55rem;
+  height: 1.55rem;
+  place-items: center;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 0 5px rgb(36 95 139 / 25%), 0 3px 10px rgb(0 0 0 / 30%);
+}
+
+.user-location-marker::after {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: white;
+  content: "";
+}
+
 .map-layout {
   display: grid;
   overflow: hidden;
