@@ -694,6 +694,21 @@ footer a {
   font-size: 1.05rem;
 }
 
+.legal-card section + section {
+  margin-top: 2rem;
+}
+
+.legal-card h2 {
+  margin-bottom: 0.65rem;
+  color: var(--blue-dark);
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+}
+
+.legal-card a:not(.button) {
+  color: var(--blue);
+  text-underline-offset: 0.18em;
+}
+
 .legal-back {
   margin-top: 1rem;
 }
