@@ -21,74 +21,78 @@
   let userMarker = null;
   let accuracyCircle = null;
 
-  const validStands = Array.isArray(STANDDATEN)
-    ? STANDDATEN.filter((stand) =>
-        Number.isInteger(stand.nummer) &&
-        stand.nummer >= 1 &&
-        stand.nummer <= 82 &&
-        typeof stand.adresse === "string" &&
-        stand.adresse.trim() !== ""
-      )
+  const locations = Array.isArray(ORTSDATEN)
+    ? ORTSDATEN
+        .map((location) => ({
+          ...location,
+          staende: Array.isArray(location.staende)
+            ? location.staende.filter(isValidStand)
+            : []
+        }))
+        .filter((location) =>
+          typeof location.adresse === "string" &&
+          location.adresse.trim() !== "" &&
+          Number.isFinite(location.lat) &&
+          Number.isFinite(location.lng) &&
+          location.staende.length > 0
+        )
+        .sort((a, b) => a.staende[0].nummer - b.staende[0].nummer)
     : [];
 
-  validStands
-    .sort((a, b) => a.nummer - b.nummer)
-    .forEach((stand) => {
-      const hasCoordinates = Number.isFinite(stand.lat) && Number.isFinite(stand.lng);
-      let marker = null;
+  locations.forEach((location) => {
+    const standCount = location.staende.length;
+    const isGroup = standCount > 1;
+    const markerText = isGroup ? `${standCount}×` : location.staende[0].nummer;
+    const locationName = location.name || location.adresse;
+    const typeLabel = location.typ === "sammelplatz" ? "Sammelplatz" : "Privatadresse";
 
-      if (hasCoordinates) {
-        const icon = L.divIcon({
-          className: "",
-          html: `<span class="marker-number" aria-hidden="true">${stand.nummer}</span>`,
-          iconSize: [35, 35],
-          iconAnchor: [17, 17]
-        });
-
-        marker = L.marker([stand.lat, stand.lng], {
-          icon,
-          title: `Stand ${stand.nummer}: ${stand.adresse}`
-        }).addTo(map);
-
-        const offer = stand.angebot
-          ? `<br><span>${escapeHtml(stand.angebot)}</span>`
-          : "";
-
-        marker.bindPopup(
-          `<strong>Stand ${stand.nummer}</strong><br>${escapeHtml(stand.adresse)}${offer}`
-        );
-        bounds.push([stand.lat, stand.lng]);
-      }
-
-      const item = document.createElement("li");
-      item.className = "stand-card";
-      item.tabIndex = 0;
-      item.innerHTML = [
-        `<strong>Stand ${stand.nummer}</strong>`,
-        `<span>${escapeHtml(stand.adresse)}</span>`,
-        stand.angebot ? `<span>${escapeHtml(stand.angebot)}</span>` : ""
-      ].join("");
-
-      const openMarker = () => {
-        if (!marker) return;
-        map.setView(marker.getLatLng(), 17);
-        marker.openPopup();
-      };
-
-      item.addEventListener("click", openMarker);
-      item.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          openMarker();
-        }
-      });
-
-      list.append(item);
+    const icon = L.divIcon({
+      className: "",
+      html: `<span class="marker-number${isGroup ? " marker-group" : ""}" aria-hidden="true">${markerText}</span>`,
+      iconSize: [38, 38],
+      iconAnchor: [19, 19]
     });
 
-  if (validStands.length > 0) {
+    const marker = L.marker([location.lat, location.lng], {
+      icon,
+      title: isGroup
+        ? `${locationName}: ${standCount} Stände`
+        : `Stand ${location.staende[0].nummer}: ${locationName}`
+    }).addTo(map);
+
+    marker.bindPopup(renderLocationPopup(location, typeLabel));
+    bounds.push([location.lat, location.lng]);
+
+    const item = document.createElement("li");
+    item.className = "location-card";
+    item.tabIndex = 0;
+    item.innerHTML = renderLocationCard(location, typeLabel);
+
+    const openMarker = () => {
+      map.setView(marker.getLatLng(), 17);
+      marker.openPopup();
+    };
+
+    item.addEventListener("click", openMarker);
+    item.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openMarker();
+      }
+    });
+
+    list.append(item);
+  });
+
+  const totalStands = locations.reduce(
+    (total, location) => total + location.staende.length,
+    0
+  );
+
+  if (totalStands > 0) {
     emptyMessage.hidden = true;
-    count.textContent = `${validStands.length} von 82 Ständen eingetragen`;
+    count.textContent =
+      `${totalStands} von 82 Ständen an ${locations.length} ${locations.length === 1 ? "Ort" : "Orten"} eingetragen`;
   }
 
   if (bounds.length > 1) {
@@ -112,6 +116,66 @@
     );
   } else {
     locateButton.addEventListener("click", locateUser);
+  }
+
+  function isValidStand(stand) {
+    return (
+      stand &&
+      Number.isInteger(stand.nummer) &&
+      stand.nummer >= 1 &&
+      stand.nummer <= 82
+    );
+  }
+
+  function renderLocationPopup(location, typeLabel) {
+    const heading = location.name || location.adresse;
+    const stands = location.staende
+      .map((stand) => `<li>${renderStand(stand)}</li>`)
+      .join("");
+
+    return [
+      `<div class="location-popup">`,
+      `<strong class="location-popup-title">${escapeHtml(heading)}</strong>`,
+      location.name ? `<span>${escapeHtml(location.adresse)}</span>` : "",
+      `<span class="place-type place-type-${location.typ === "sammelplatz" ? "group" : "private"}">${typeLabel} · ${location.staende.length} ${location.staende.length === 1 ? "Stand" : "Stände"}</span>`,
+      `<ul class="popup-stands">${stands}</ul>`,
+      `</div>`
+    ].join("");
+  }
+
+  function renderLocationCard(location, typeLabel) {
+    const heading = location.name || location.adresse;
+    const stands = location.staende
+      .map((stand) => `<li>${renderStand(stand)}</li>`)
+      .join("");
+
+    return [
+      `<div class="location-card-heading">`,
+      `<strong>${escapeHtml(heading)}</strong>`,
+      `<span class="place-type place-type-${location.typ === "sammelplatz" ? "group" : "private"}">${typeLabel} · ${location.staende.length} ${location.staende.length === 1 ? "Stand" : "Stände"}</span>`,
+      `</div>`,
+      location.name ? `<span class="location-address">${escapeHtml(location.adresse)}</span>` : "",
+      `<ul class="location-stands">${stands}</ul>`
+    ].join("");
+  }
+
+  function renderStand(stand) {
+    const features = Array.isArray(stand.besonderheiten)
+      ? stand.besonderheiten
+      : [];
+    const badges = features
+      .map((feature) => {
+        const cakeClass = feature.toLowerCase() === "kuchen" ? " feature-cake" : "";
+        return `<span class="feature-badge${cakeClass}">${escapeHtml(feature)}</span>`;
+      })
+      .join("");
+
+    return [
+      `<span class="stand-line"><strong>Stand ${stand.nummer}</strong>`,
+      stand.angebot ? `<span class="stand-offer">${escapeHtml(stand.angebot)}</span>` : "",
+      badges ? `<span class="feature-list">${badges}</span>` : "",
+      `</span>`
+    ].join("");
   }
 
   function locateUser() {
