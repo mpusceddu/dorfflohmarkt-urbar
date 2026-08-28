@@ -665,8 +665,8 @@ const ORTSDATEN = [
     "name": "Kita Unter dem Regenbogen",
     "adresse": "Bornstraße 27, 56182 Urbar",
     "typ": "privat",
-    "lat": 50.3799433,
-    "lng": 7.6223842,
+    "lat": 50.380165,
+    "lng": 7.625568,
     "staende": [
       {
         "nummer": 72
