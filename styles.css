@@ -363,6 +363,35 @@ nav .nav-highlight:focus-visible {
   font-weight: 700;
 }
 
+.map-search {
+  display: grid;
+  grid-template-columns: minmax(0, 32rem);
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.map-search input {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #b8c9ce;
+  border-radius: 0.55rem;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.map-search input:focus {
+  border-color: var(--blue);
+  outline: 3px solid rgb(36 95 139 / 18%);
+}
+
+.map-search p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .user-location-marker {
   display: grid;
   width: 1.55rem;
@@ -913,6 +942,20 @@ footer a {
   font-size: 0.9rem;
 }
 
+.stand-link {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 850;
+  text-decoration-color: #9ab3c2;
+  text-underline-offset: 0.18em;
+}
+
+.stand-link:hover,
+.stand-link:focus-visible {
+  color: var(--blue);
+  text-decoration-color: currentColor;
+}
+
 .stand-offer {
   margin-top: 0.12rem;
   color: var(--muted);
@@ -942,6 +985,52 @@ footer a {
 .marker-group {
   background: var(--teal);
   font-size: 0.7rem;
+}
+
+.marker-cluster {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: var(--blue-dark);
+  box-shadow: 0 3px 12px rgb(0 0 0 / 32%);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+}
+
+.location-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.4rem;
+  background: #e7f0f6;
+  color: var(--blue-dark);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.location-action:hover,
+.location-action:focus-visible {
+  background: var(--blue-dark);
+  color: white;
+}
+
+.stand-anchor {
+  scroll-margin-top: 7rem;
 }
 
 .location-popup {
