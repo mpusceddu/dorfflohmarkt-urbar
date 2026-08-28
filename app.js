@@ -20,13 +20,14 @@
   const locationStatus = document.querySelector("#location-status");
   const searchInput = document.querySelector("#stand-search");
   const searchStatus = document.querySelector("#search-status");
+  const printMapButton = document.querySelector("#print-map-button");
   const standAccordion = document.querySelector(".map-accordion");
   const bounds = [];
   const standLayer = L.layerGroup().addTo(map);
   const locationEntries = [];
-  const standLookup = new Map();
   let userMarker = null;
   let accuracyCircle = null;
+  let printAccordionState = [];
 
   const locations = Array.isArray(ORTSDATEN)
     ? ORTSDATEN
@@ -84,7 +85,6 @@
 
     const entry = { location, marker, item };
     locationEntries.push(entry);
-    location.staende.forEach((stand) => standLookup.set(stand.nummer, entry));
 
     const openMarker = () => {
       showLocation(entry);
@@ -167,8 +167,12 @@
 
   searchInput.addEventListener("input", applySearch);
   searchInput.addEventListener("search", applySearch);
-  window.addEventListener("hashchange", openStandFromHash);
-  window.setTimeout(openStandFromHash, 0);
+  printMapButton.addEventListener("click", () => {
+    preparePrint();
+    window.setTimeout(() => window.print(), 150);
+  });
+  window.addEventListener("beforeprint", preparePrint);
+  window.addEventListener("afterprint", restoreAfterPrint);
 
   document.querySelectorAll('a[href="#karte"]').forEach((link) => {
     link.addEventListener("click", () => {
@@ -287,21 +291,22 @@
     window.setTimeout(() => entry.marker.openPopup(), 0);
   }
 
-  function openStandFromHash() {
-    const match = window.location.hash.match(/^#stand-(\d+)$/);
-    if (!match) return;
+  function preparePrint() {
+    const accordions = [...document.querySelectorAll(".map-accordion")];
+    if (printAccordionState.length === 0) {
+      printAccordionState = accordions.map((details) => details.open);
+    }
+    accordions.forEach((details) => { details.open = true; });
+    map.invalidateSize();
+  }
 
-    const standNumber = Number(match[1]);
-    const entry = standLookup.get(standNumber);
-    if (!entry) return;
-
-    searchInput.value = String(standNumber);
-    applySearch();
-    standAccordion.open = true;
-    document.querySelector("#karte").scrollIntoView({ block: "start" });
-    window.setTimeout(() => {
-      document.querySelector(`#stand-${standNumber}`)?.scrollIntoView({ block: "nearest" });
-    }, 100);
+  function restoreAfterPrint() {
+    const accordions = [...document.querySelectorAll(".map-accordion")];
+    accordions.forEach((details, index) => {
+      details.open = printAccordionState[index] ?? details.open;
+    });
+    printAccordionState = [];
+    map.invalidateSize();
   }
 
   function isValidStand(stand) {
@@ -392,17 +397,14 @@
     ].join("");
   }
 
-  function renderStand(stand, withAnchor) {
-    const id = withAnchor ? ` id="stand-${stand.nummer}"` : "";
-    return `<span${id} class="stand-line${withAnchor ? " stand-anchor" : ""}"><a class="stand-link" href="#stand-${stand.nummer}">Stand ${stand.nummer}</a></span>`;
+  function renderStand(stand) {
+    return `<span class="stand-line"><strong>Stand ${stand.nummer}</strong></span>`;
   }
 
   function renderLocationActions(location) {
-    const firstStand = location.staende[0].nummer;
     return [
       `<div class="location-actions">`,
       `<a class="location-action" href="${escapeHtml(getRouteUrl(location))}" target="_blank" rel="noopener">Route starten</a>`,
-      `<a class="location-action" href="#stand-${firstStand}">Direktlink</a>`,
       `</div>`
     ].join("");
   }
