@@ -138,7 +138,7 @@
   if (totalStands > 0) {
     emptyMessage.hidden = true;
     count.textContent =
-      `${totalStands} von 82 Ständen an ${locations.length} ${locations.length === 1 ? "Ort" : "Orten"} eingetragen · ${servicePoints.length} Orientierungspunkte`;
+      `${totalStands} Stände an ${locations.length} ${locations.length === 1 ? "Ort" : "Orten"} · ${servicePoints.length} Orientierungspunkte`;
   }
 
   if (bounds.length > 1) {
@@ -169,7 +169,7 @@
       stand &&
       Number.isInteger(stand.nummer) &&
       stand.nummer >= 1 &&
-      stand.nummer <= 82
+      stand.nummer <= 86
     );
   }
 
