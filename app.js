@@ -44,12 +44,15 @@
     ? SERVICEPUNKTE.filter(isValidServicePoint)
     : [];
 
-  locations.forEach((location) => {
+  const locationDisplayPoints = spreadOverlappingLocations(locations);
+
+  locations.forEach((location, locationIndex) => {
     const standCount = location.staende.length;
     const isGroup = standCount > 1;
     const markerText = isGroup ? `${standCount}×` : location.staende[0].nummer;
     const locationName = location.name || location.adresse;
     const typeLabel = getLocationTypeLabel(location, standCount);
+    const displayPoint = locationDisplayPoints[locationIndex];
 
     const icon = L.divIcon({
       className: "",
@@ -58,7 +61,7 @@
       iconAnchor: [19, 19]
     });
 
-    const marker = L.marker([location.lat, location.lng], {
+    const marker = L.marker(displayPoint, {
       icon,
       title: isGroup
         ? `${locationName}: ${standCount} Stände`
@@ -184,6 +187,34 @@
       Number.isFinite(servicePoint.lat) &&
       Number.isFinite(servicePoint.lng)
     );
+  }
+
+  function spreadOverlappingLocations(items) {
+    const groups = new Map();
+
+    items.forEach((location, index) => {
+      const key = `${location.lat.toFixed(6)},${location.lng.toFixed(6)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(index);
+    });
+
+    const points = items.map((location) => [location.lat, location.lng]);
+
+    groups.forEach((indices) => {
+      if (indices.length < 2) return;
+
+      const radius = 0.000075;
+      indices.forEach((itemIndex, groupIndex) => {
+        const angle = (-Math.PI / 2) + (2 * Math.PI * groupIndex) / indices.length;
+        const location = items[itemIndex];
+        points[itemIndex] = [
+          location.lat + Math.sin(angle) * radius,
+          location.lng + Math.cos(angle) * radius
+        ];
+      });
+    });
+
+    return points;
   }
 
   function getLocationTypeLabel(location, standCount) {
