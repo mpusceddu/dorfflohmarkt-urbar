@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260828-19">
+  <link rel="stylesheet" href="styles.css?v=20260828-20">
 </head>
 <body>
   <header class="site-header">
@@ -89,6 +89,13 @@
         </p>
       </div>
 
+      <div class="map-search">
+        <label class="visually-hidden" for="stand-search">Standnummer oder Straße suchen</label>
+        <input id="stand-search" type="search" inputmode="search" autocomplete="off"
+          placeholder="Standnummer oder Straße suchen" aria-describedby="search-status">
+        <p id="search-status" aria-live="polite">Alle 86 Stände werden angezeigt.</p>
+      </div>
+
       <div class="map-layout">
         <section class="map-section" aria-label="Karte der Flohmarktstände">
           <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
@@ -137,7 +144,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="standdaten.js?v=20260828-19"></script>
-  <script src="app.js?v=20260828-19"></script>
+  <script src="standdaten.js?v=20260828-20"></script>
+  <script src="app.js?v=20260828-20"></script>
 </body>
 </html>
