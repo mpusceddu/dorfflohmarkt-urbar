@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://unpkg.com">
   <link rel="preconnect" href="https://tile.openstreetmap.org">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="styles.css?v=20260828-20">
+  <link rel="stylesheet" href="styles.css?v=20260828-21">
 </head>
 <body>
   <header class="site-header">
@@ -96,6 +96,10 @@
         <p id="search-status" aria-live="polite">Alle 86 Stände werden angezeigt.</p>
       </div>
 
+      <button id="print-map-button" class="print-map-button" type="button">
+        Karte drucken oder als PDF speichern
+      </button>
+
       <div class="map-layout">
         <section class="map-section" aria-label="Karte der Flohmarktstände">
           <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
@@ -121,6 +125,16 @@
           </details>
         </aside>
       </div>
+
+      <section class="qr-panel" aria-labelledby="qr-title">
+        <img src="assets/qr-dorfflohmarkt-urbar.svg" alt="QR-Code zur Internetseite dorfflohmarkt-urbar.de">
+        <div>
+          <p class="eyebrow">Karte mitnehmen</p>
+          <h3 id="qr-title">Scannen und unterwegs öffnen</h3>
+          <p>Der QR-Code führt dauerhaft zu <strong>dorfflohmarkt-urbar.de</strong>.</p>
+          <a class="location-action" href="assets/qr-dorfflohmarkt-urbar.svg" download>QR-Code herunterladen</a>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -144,7 +158,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <script src="standdaten.js?v=20260828-20"></script>
-  <script src="app.js?v=20260828-20"></script>
+  <script src="standdaten.js?v=20260828-21"></script>
+  <script src="app.js?v=20260828-21"></script>
 </body>
 </html>
