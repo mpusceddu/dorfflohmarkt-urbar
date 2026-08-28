@@ -45,8 +45,8 @@ const ORTSDATEN = [
     "id": "hilda-von-stedman-strasse-1",
     "adresse": "Hilda-von-Stedman-Straße 1, 56182 Urbar",
     "typ": "privat",
-    "lat": 50.3851174,
-    "lng": 7.6247365,
+    "lat": 50.3852962,
+    "lng": 7.6249798,
     "staende": [
       {
         "nummer": 4
@@ -873,4 +873,3 @@ const SERVICEPUNKTE = [
     "lng": 7.6227592
   }
 ];
-
