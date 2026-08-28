@@ -664,12 +664,15 @@ const ORTSDATEN = [
     "id": "bornstrasse-27",
     "name": "Kita Unter dem Regenbogen",
     "adresse": "Bornstraße 27, 56182 Urbar",
-    "typ": "privat",
+    "typ": "mehrfach",
     "lat": 50.3799433,
     "lng": 7.6223842,
     "staende": [
       {
         "nummer": 72
+      },
+      {
+        "nummer": 73
       }
     ]
   },
@@ -681,7 +684,7 @@ const ORTSDATEN = [
     "lng": 7.6227502,
     "staende": [
       {
-        "nummer": 73
+        "nummer": 74
       }
     ]
   },
@@ -693,7 +696,7 @@ const ORTSDATEN = [
     "lng": 7.6224411,
     "staende": [
       {
-        "nummer": 74
+        "nummer": 75
       }
     ]
   },
@@ -705,7 +708,7 @@ const ORTSDATEN = [
     "lng": 7.6226633,
     "staende": [
       {
-        "nummer": 75
+        "nummer": 76
       }
     ]
   },
@@ -717,7 +720,7 @@ const ORTSDATEN = [
     "lng": 7.6235221,
     "staende": [
       {
-        "nummer": 76
+        "nummer": 77
       }
     ]
   },
@@ -729,7 +732,7 @@ const ORTSDATEN = [
     "lng": 7.6236013,
     "staende": [
       {
-        "nummer": 77
+        "nummer": 78
       }
     ]
   },
@@ -741,7 +744,7 @@ const ORTSDATEN = [
     "lng": 7.6234813,
     "staende": [
       {
-        "nummer": 78
+        "nummer": 79
       }
     ]
   },
@@ -753,7 +756,7 @@ const ORTSDATEN = [
     "lng": 7.6243639,
     "staende": [
       {
-        "nummer": 79
+        "nummer": 80
       }
     ]
   },
@@ -765,7 +768,7 @@ const ORTSDATEN = [
     "lng": 7.6248218,
     "staende": [
       {
-        "nummer": 80
+        "nummer": 81
       }
     ]
   },
@@ -777,7 +780,7 @@ const ORTSDATEN = [
     "lng": 7.625211,
     "staende": [
       {
-        "nummer": 81
+        "nummer": 82
       }
     ]
   },
@@ -789,7 +792,7 @@ const ORTSDATEN = [
     "lng": 7.6250132,
     "staende": [
       {
-        "nummer": 82
+        "nummer": 83
       }
     ]
   },
@@ -801,7 +804,7 @@ const ORTSDATEN = [
     "lng": 7.6205221,
     "staende": [
       {
-        "nummer": 83
+        "nummer": 84
       }
     ]
   },
@@ -813,10 +816,10 @@ const ORTSDATEN = [
     "lng": 7.6192457,
     "staende": [
       {
-        "nummer": 84
+        "nummer": 85
       },
       {
-        "nummer": 85
+        "nummer": 86
       }
     ]
   },
@@ -828,7 +831,7 @@ const ORTSDATEN = [
     "lng": 7.6278797,
     "staende": [
       {
-        "nummer": 86
+        "nummer": 87
       }
     ]
   }
