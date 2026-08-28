@@ -329,11 +329,14 @@
   function showLocationError(error) {
     const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isChromeOnApple = /CriOS/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
     const permissionDeniedMessage = isAppleMobile
       ? isChromeOnApple
-        ? "Standortzugriff ist ausgeschaltet. Öffnen Sie auf dem iPhone: Einstellungen → Apps → Chrome → Standort → Beim Verwenden der App. Kehren Sie danach zur Karte zurück und versuchen Sie es erneut."
-        : "Standortzugriff ist ausgeschaltet. Öffnen Sie auf dem iPhone: Einstellungen → Apps → Safari → Standort → Fragen oder Erlauben. Kehren Sie danach zur Karte zurück und versuchen Sie es erneut."
-      : "Standortzugriff ist blockiert. Bitte erlauben Sie ihn in den Website-Einstellungen Ihres Browsers und laden Sie die Seite anschließend neu.";
+        ? "Standortzugriff ist ausgeschaltet. Prüfen Sie zuerst: Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → Ein. Danach: Einstellungen → Apps → Chrome → Standort → Beim Verwenden der App. Kehren Sie anschließend zur Karte zurück."
+        : "Standortzugriff ist ausgeschaltet. Prüfen Sie zuerst: Einstellungen → Datenschutz & Sicherheit → Ortungsdienste → Ein. Danach: Einstellungen → Apps → Safari → Standort → Fragen oder Erlauben. Kehren Sie anschließend zur Karte zurück."
+      : isAndroid
+        ? "Standortzugriff ist ausgeschaltet. Öffnen Sie: Einstellungen → Standort → Standort verwenden. Prüfen Sie danach in Chrome: ⋮ → Einstellungen → Website-Einstellungen → Standort. Kehren Sie anschließend zur Karte zurück."
+        : "Standortzugriff ist blockiert. Bitte aktivieren Sie die Ortungsdienste Ihres Geräts und erlauben Sie anschließend den Standortzugriff in den Website-Einstellungen Ihres Browsers.";
     const messages = {
       1: permissionDeniedMessage,
       2: "Der Standort konnte gerade nicht ermittelt werden.",
