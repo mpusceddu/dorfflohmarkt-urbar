@@ -18,7 +18,13 @@
   const count = document.querySelector("#stand-count");
   const locateButton = document.querySelector("#locate-button");
   const locationStatus = document.querySelector("#location-status");
+  const searchInput = document.querySelector("#stand-search");
+  const searchStatus = document.querySelector("#search-status");
+  const standAccordion = document.querySelector(".map-accordion");
   const bounds = [];
+  const standLayer = L.layerGroup().addTo(map);
+  const locationEntries = [];
+  const standLookup = new Map();
   let userMarker = null;
   let accuracyCircle = null;
 
@@ -66,7 +72,7 @@
       title: isGroup
         ? `${locationName}: ${standCount} Stände`
         : `Stand ${location.staende[0].nummer}: ${locationName}`
-    }).addTo(map);
+    });
 
     marker.bindPopup(renderLocationPopup(location, typeLabel));
     bounds.push([location.lat, location.lng]);
@@ -76,12 +82,18 @@
     item.tabIndex = 0;
     item.innerHTML = renderLocationCard(location, typeLabel);
 
+    const entry = { location, marker, item };
+    locationEntries.push(entry);
+    location.staende.forEach((stand) => standLookup.set(stand.nummer, entry));
+
     const openMarker = () => {
-      map.setView(marker.getLatLng(), 17);
-      marker.openPopup();
+      showLocation(entry);
     };
 
-    item.addEventListener("click", openMarker);
+    item.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+      openMarker();
+    });
     item.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
@@ -150,6 +162,14 @@
     map.setView(bounds[0], 17);
   }
 
+  renderStandMarkers();
+  map.on("zoomend", renderStandMarkers);
+
+  searchInput.addEventListener("input", applySearch);
+  searchInput.addEventListener("search", applySearch);
+  window.addEventListener("hashchange", openStandFromHash);
+  window.setTimeout(openStandFromHash, 0);
+
   document.querySelectorAll('a[href="#karte"]').forEach((link) => {
     link.addEventListener("click", () => {
       window.setTimeout(() => map.invalidateSize(), 350);
@@ -165,6 +185,123 @@
     );
   } else {
     locateButton.addEventListener("click", locateUser);
+  }
+
+  function renderStandMarkers() {
+    standLayer.clearLayers();
+    const visibleEntries = locationEntries.filter((entry) => !entry.item.hidden);
+    const zoom = map.getZoom();
+
+    if (zoom >= 16 || visibleEntries.length <= 8) {
+      visibleEntries.forEach((entry) => entry.marker.addTo(standLayer));
+      return;
+    }
+
+    const cellSize = zoom <= 13 ? 120 : zoom === 14 ? 90 : 70;
+    const clusters = new Map();
+
+    visibleEntries.forEach((entry) => {
+      const point = map.project([entry.location.lat, entry.location.lng], zoom);
+      const key = `${Math.floor(point.x / cellSize)},${Math.floor(point.y / cellSize)}`;
+      if (!clusters.has(key)) clusters.set(key, []);
+      clusters.get(key).push(entry);
+    });
+
+    clusters.forEach((entries) => {
+      if (entries.length === 1) {
+        entries[0].marker.addTo(standLayer);
+        return;
+      }
+
+      const standCount = entries.reduce(
+        (total, entry) => total + entry.location.staende.length,
+        0
+      );
+      const center = entries.reduce(
+        (result, entry) => [
+          result[0] + entry.location.lat / entries.length,
+          result[1] + entry.location.lng / entries.length
+        ],
+        [0, 0]
+      );
+      const icon = L.divIcon({
+        className: "",
+        html: `<span class="marker-cluster" aria-hidden="true">${standCount}</span>`,
+        iconSize: [48, 48],
+        iconAnchor: [24, 24]
+      });
+      const clusterMarker = L.marker(center, {
+        icon,
+        title: `${standCount} Stände in diesem Bereich`
+      }).addTo(standLayer);
+
+      clusterMarker.on("click", () => {
+        map.setView(center, Math.min(17, zoom + 2));
+      });
+    });
+  }
+
+  function applySearch() {
+    const query = searchInput.value.trim().toLocaleLowerCase("de-DE");
+    const numericQuery = /^\d+$/.test(query) ? Number(query) : null;
+    let matchingStands = 0;
+    let matchingLocations = 0;
+
+    locationEntries.forEach((entry) => {
+      const location = entry.location;
+      const matches = query === "" || (numericQuery !== null
+        ? location.staende.some((stand) => stand.nummer === numericQuery)
+        : `${location.name || ""} ${location.adresse}`
+            .toLocaleLowerCase("de-DE")
+            .includes(query));
+
+      entry.item.hidden = !matches;
+      if (matches) {
+        matchingLocations += 1;
+        matchingStands += numericQuery !== null
+          ? location.staende.filter((stand) => stand.nummer === numericQuery).length
+          : location.staende.length;
+      }
+    });
+
+    if (query === "") {
+      searchStatus.textContent = `Alle ${totalStands} Stände werden angezeigt.`;
+    } else if (matchingStands === 0) {
+      searchStatus.textContent = "Kein passender Stand gefunden.";
+    } else {
+      searchStatus.textContent = `${matchingStands} ${matchingStands === 1 ? "Stand" : "Stände"} an ${matchingLocations} ${matchingLocations === 1 ? "Ort" : "Orten"} gefunden.`;
+      standAccordion.open = true;
+    }
+
+    renderStandMarkers();
+
+    const visibleEntries = locationEntries.filter((entry) => !entry.item.hidden);
+    if (query && visibleEntries.length === 1) {
+      showLocation(visibleEntries[0]);
+    }
+  }
+
+  function showLocation(entry) {
+    map.setView(entry.marker.getLatLng(), 17);
+    renderStandMarkers();
+    window.setTimeout(() => entry.marker.openPopup(), 0);
+  }
+
+  function openStandFromHash() {
+    const match = window.location.hash.match(/^#stand-(\d+)$/);
+    if (!match) return;
+
+    const standNumber = Number(match[1]);
+    const entry = standLookup.get(standNumber);
+    if (!entry) return;
+
+    searchInput.value = String(standNumber);
+    applySearch();
+    standAccordion.open = true;
+    document.querySelector("#karte").scrollIntoView({ block: "start" });
+    window.setTimeout(() => {
+      document.querySelector(`#stand-${standNumber}`)?.scrollIntoView({ block: "nearest" });
+    }, 100);
   }
 
   function isValidStand(stand) {
@@ -224,7 +361,7 @@
   function renderLocationPopup(location, typeLabel) {
     const heading = location.name || location.adresse;
     const stands = location.staende
-      .map((stand) => `<li>${renderStand(stand)}</li>`)
+      .map((stand) => `<li>${renderStand(stand, false)}</li>`)
       .join("");
 
     return [
@@ -233,6 +370,7 @@
       location.name ? `<span>${escapeHtml(location.adresse)}</span>` : "",
       `<span class="place-type place-type-${location.typ === "mehrfach" ? "group" : "private"}">${typeLabel} · ${location.staende.length} ${location.staende.length === 1 ? "Stand" : "Stände"}</span>`,
       `<ul class="popup-stands">${stands}</ul>`,
+      renderLocationActions(location),
       `</div>`
     ].join("");
   }
@@ -240,7 +378,7 @@
   function renderLocationCard(location, typeLabel) {
     const heading = location.name || location.adresse;
     const stands = location.staende
-      .map((stand) => `<li>${renderStand(stand)}</li>`)
+      .map((stand) => `<li>${renderStand(stand, true)}</li>`)
       .join("");
 
     return [
@@ -249,27 +387,32 @@
       `<span class="place-type place-type-${location.typ === "mehrfach" ? "group" : "private"}">${typeLabel} · ${location.staende.length} ${location.staende.length === 1 ? "Stand" : "Stände"}</span>`,
       `</div>`,
       location.name ? `<span class="location-address">${escapeHtml(location.adresse)}</span>` : "",
-      `<ul class="location-stands">${stands}</ul>`
+      `<ul class="location-stands">${stands}</ul>`,
+      renderLocationActions(location)
     ].join("");
   }
 
-  function renderStand(stand) {
-    const features = Array.isArray(stand.besonderheiten)
-      ? stand.besonderheiten
-      : [];
-    const badges = features
-      .map((feature) => {
-        const cakeClass = feature.toLowerCase() === "kuchen" ? " feature-cake" : "";
-        return `<span class="feature-badge${cakeClass}">${escapeHtml(feature)}</span>`;
-      })
-      .join("");
+  function renderStand(stand, withAnchor) {
+    const id = withAnchor ? ` id="stand-${stand.nummer}"` : "";
+    return `<span${id} class="stand-line${withAnchor ? " stand-anchor" : ""}"><a class="stand-link" href="#stand-${stand.nummer}">Stand ${stand.nummer}</a></span>`;
+  }
 
+  function renderLocationActions(location) {
+    const firstStand = location.staende[0].nummer;
     return [
-      `<span class="stand-line"><strong>Stand ${stand.nummer}</strong>`,
-      stand.angebot ? `<span class="stand-offer">${escapeHtml(stand.angebot)}</span>` : "",
-      badges ? `<span class="feature-list">${badges}</span>` : "",
-      `</span>`
+      `<div class="location-actions">`,
+      `<a class="location-action" href="${escapeHtml(getRouteUrl(location))}" target="_blank" rel="noopener">Route starten</a>`,
+      `<a class="location-action" href="#stand-${firstStand}">Direktlink</a>`,
+      `</div>`
     ].join("");
+  }
+
+  function getRouteUrl(location) {
+    const destination = `${location.lat},${location.lng}`;
+    const useAppleMaps = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+    return useAppleMaps
+      ? `https://maps.apple.com/?daddr=${destination}&dirflg=w`
+      : `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=walking`;
   }
 
   function renderServicePopup(servicePoint, typeLabel) {
