@@ -401,11 +401,7 @@ const ORTSDATEN = [
         "nummer": 45
       },
       {
-        "nummer": 46,
-        "angebot": "Foodstand Kaffee, Würstchen & Kuchen",
-        "besonderheiten": [
-          "Kuchen"
-        ]
+        "nummer": 46
       },
       {
         "nummer": 47
