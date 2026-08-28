@@ -44,7 +44,7 @@
     ? SERVICEPUNKTE.filter(isValidServicePoint)
     : [];
 
-  const locationDisplayPoints = spreadOverlappingLocations(locations);
+  const locationMarkerOffsets = getOverlappingLocationOffsets(locations);
 
   locations.forEach((location, locationIndex) => {
     const standCount = location.staende.length;
@@ -52,16 +52,16 @@
     const markerText = isGroup ? `${standCount}×` : location.staende[0].nummer;
     const locationName = location.name || location.adresse;
     const typeLabel = getLocationTypeLabel(location, standCount);
-    const displayPoint = locationDisplayPoints[locationIndex];
+    const markerOffset = locationMarkerOffsets[locationIndex];
 
     const icon = L.divIcon({
       className: "",
       html: `<span class="marker-number${isGroup ? " marker-group" : ""}" aria-hidden="true">${markerText}</span>`,
       iconSize: [38, 38],
-      iconAnchor: [19, 19]
+      iconAnchor: [19 - markerOffset.x, 19 - markerOffset.y]
     });
 
-    const marker = L.marker(displayPoint, {
+    const marker = L.marker([location.lat, location.lng], {
       icon,
       title: isGroup
         ? `${locationName}: ${standCount} Stände`
@@ -189,7 +189,7 @@
     );
   }
 
-  function spreadOverlappingLocations(items) {
+  function getOverlappingLocationOffsets(items) {
     const groups = new Map();
 
     items.forEach((location, index) => {
@@ -198,23 +198,21 @@
       groups.get(key).push(index);
     });
 
-    const points = items.map((location) => [location.lat, location.lng]);
+    const offsets = items.map(() => ({ x: 0, y: 0 }));
 
     groups.forEach((indices) => {
       if (indices.length < 2) return;
 
-      const radius = 0.000075;
+      const spacing = 44;
       indices.forEach((itemIndex, groupIndex) => {
-        const angle = (-Math.PI / 2) + (2 * Math.PI * groupIndex) / indices.length;
-        const location = items[itemIndex];
-        points[itemIndex] = [
-          location.lat + Math.sin(angle) * radius,
-          location.lng + Math.cos(angle) * radius
-        ];
+        offsets[itemIndex] = {
+          x: (groupIndex - (indices.length - 1) / 2) * spacing,
+          y: 0
+        };
       });
     });
 
-    return points;
+    return offsets;
   }
 
   function getLocationTypeLabel(location, standCount) {
