@@ -329,7 +329,7 @@
   function showLocationError(error) {
     const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const permissionDeniedMessage = isAppleMobile
-      ? "Standortzugriff ist blockiert. Auf dem iPhone: Seitenmenü in der Adressleiste öffnen → Website-Einstellungen → Standort → Erlauben. Danach diese Seite neu laden."
+      ? "Standortzugriff ist ausgeschaltet. Tippen Sie unten in der Adressleiste auf das kleine Symbol links neben dorfflohmarkt-urbar.de. Wählen Sie dann Website-Einstellungen → Standort → Erlauben und laden Sie die Seite neu."
       : "Standortzugriff ist blockiert. Bitte erlauben Sie ihn in den Website-Einstellungen Ihres Browsers und laden Sie die Seite anschließend neu.";
     const messages = {
       1: permissionDeniedMessage,
