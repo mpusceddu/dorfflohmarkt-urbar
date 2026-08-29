@@ -84,8 +84,8 @@ const ORTSDATEN = [
     "id": "helfensteinstrasse-1c",
     "adresse": "Helfensteinstraße 1c, 56182 Urbar",
     "typ": "mehrfach",
-    "lat": 50.3839794,
-    "lng": 7.6247377,
+    "lat": 50.38471,
+    "lng": 7.624613,
     "staende": [
       {
         "nummer": 8
