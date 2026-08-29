@@ -704,11 +704,11 @@ const ORTSDATEN = [
     ]
   },
   {
-    "id": "hauptstrasse-65",
-    "adresse": "Hauptstraße 65, 56182 Urbar",
+    "id": "hauptstrasse-66",
+    "adresse": "Hauptstraße 66, 56182 Urbar",
     "typ": "privat",
-    "lat": 50.3806429,
-    "lng": 7.6224411,
+    "lat": 50.3805102,
+    "lng": 7.6220867,
     "staende": [
       {
         "nummer": 77
