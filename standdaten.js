@@ -264,11 +264,11 @@ const ORTSDATEN = [
     ]
   },
   {
-    "id": "in-den-bungerten-28",
-    "adresse": "In den Büngerten 28, 56182 Urbar",
+    "id": "in-den-bungerten-24",
+    "adresse": "In den Büngerten 24, 56182 Urbar",
     "typ": "mehrfach",
-    "lat": 50.3820811,
-    "lng": 7.6242658,
+    "lat": 50.3827361,
+    "lng": 7.6239227,
     "staende": [
       {
         "nummer": 27
@@ -278,6 +278,27 @@ const ORTSDATEN = [
       },
       {
         "nummer": 29
+      },
+      {
+        "nummer": 30
+      }
+    ]
+  },
+  {
+    "id": "in-den-bungerten-28",
+    "adresse": "In den Büngerten 28, 56182 Urbar",
+    "typ": "mehrfach",
+    "lat": 50.3820811,
+    "lng": 7.6242658,
+    "staende": [
+      {
+        "nummer": 31
+      },
+      {
+        "nummer": 32
+      },
+      {
+        "nummer": 33
       }
     ]
   },
@@ -289,7 +310,7 @@ const ORTSDATEN = [
     "lng": 7.6251249,
     "staende": [
       {
-        "nummer": 30
+        "nummer": 34
       }
     ]
   },
@@ -301,7 +322,7 @@ const ORTSDATEN = [
     "lng": 7.6260494,
     "staende": [
       {
-        "nummer": 31
+        "nummer": 35
       }
     ]
   },
@@ -313,7 +334,7 @@ const ORTSDATEN = [
     "lng": 7.626811,
     "staende": [
       {
-        "nummer": 32
+        "nummer": 36
       }
     ]
   },
@@ -325,10 +346,22 @@ const ORTSDATEN = [
     "lng": 7.6267393,
     "staende": [
       {
-        "nummer": 33
+        "nummer": 37
       },
       {
-        "nummer": 34
+        "nummer": 38
+      }
+    ]
+  },
+  {
+    "id": "arenberger-strasse-42",
+    "adresse": "Arenberger Straße 42, 56182 Urbar",
+    "typ": "privat",
+    "lat": 50.3813196,
+    "lng": 7.6257425,
+    "staende": [
+      {
+        "nummer": 39
       }
     ]
   },
@@ -340,7 +373,7 @@ const ORTSDATEN = [
     "lng": 7.6257201,
     "staende": [
       {
-        "nummer": 35
+        "nummer": 40
       }
     ]
   },
@@ -352,7 +385,7 @@ const ORTSDATEN = [
     "lng": 7.6253386,
     "staende": [
       {
-        "nummer": 36
+        "nummer": 41
       }
     ]
   },
@@ -364,7 +397,7 @@ const ORTSDATEN = [
     "lng": 7.6247846,
     "staende": [
       {
-        "nummer": 37
+        "nummer": 42
       }
     ]
   },
@@ -376,21 +409,6 @@ const ORTSDATEN = [
     "lat": 50.3814375,
     "lng": 7.6239305,
     "staende": [
-      {
-        "nummer": 38
-      },
-      {
-        "nummer": 39
-      },
-      {
-        "nummer": 40
-      },
-      {
-        "nummer": 41
-      },
-      {
-        "nummer": 42
-      },
       {
         "nummer": 43
       },
@@ -414,6 +432,21 @@ const ORTSDATEN = [
       },
       {
         "nummer": 50
+      },
+      {
+        "nummer": 51
+      },
+      {
+        "nummer": 52
+      },
+      {
+        "nummer": 53
+      },
+      {
+        "nummer": 54
+      },
+      {
+        "nummer": 55
       }
     ]
   },
@@ -425,7 +458,7 @@ const ORTSDATEN = [
     "lng": 7.6240174,
     "staende": [
       {
-        "nummer": 51
+        "nummer": 56
       }
     ]
   },
@@ -437,7 +470,7 @@ const ORTSDATEN = [
     "lng": 7.625472,
     "staende": [
       {
-        "nummer": 52
+        "nummer": 57
       }
     ]
   },
@@ -449,7 +482,7 @@ const ORTSDATEN = [
     "lng": 7.6262,
     "staende": [
       {
-        "nummer": 53
+        "nummer": 58
       }
     ]
   },
@@ -461,7 +494,7 @@ const ORTSDATEN = [
     "lng": 7.6260031,
     "staende": [
       {
-        "nummer": 54
+        "nummer": 59
       }
     ]
   },
@@ -473,7 +506,7 @@ const ORTSDATEN = [
     "lng": 7.6268805,
     "staende": [
       {
-        "nummer": 55
+        "nummer": 60
       }
     ]
   },
@@ -485,7 +518,7 @@ const ORTSDATEN = [
     "lng": 7.6271277,
     "staende": [
       {
-        "nummer": 56
+        "nummer": 61
       }
     ]
   },
@@ -497,7 +530,7 @@ const ORTSDATEN = [
     "lng": 7.6289658,
     "staende": [
       {
-        "nummer": 57
+        "nummer": 62
       }
     ]
   },
@@ -509,7 +542,7 @@ const ORTSDATEN = [
     "lng": 7.6291117,
     "staende": [
       {
-        "nummer": 58
+        "nummer": 63
       }
     ]
   },
@@ -521,7 +554,7 @@ const ORTSDATEN = [
     "lng": 7.6287645,
     "staende": [
       {
-        "nummer": 59
+        "nummer": 64
       }
     ]
   },
@@ -533,10 +566,10 @@ const ORTSDATEN = [
     "lng": 7.6291682,
     "staende": [
       {
-        "nummer": 60
+        "nummer": 65
       },
       {
-        "nummer": 61
+        "nummer": 66
       }
     ]
   },
@@ -548,7 +581,7 @@ const ORTSDATEN = [
     "lng": 7.6297509,
     "staende": [
       {
-        "nummer": 62
+        "nummer": 67
       }
     ]
   },
@@ -560,7 +593,7 @@ const ORTSDATEN = [
     "lng": 7.6286052,
     "staende": [
       {
-        "nummer": 63
+        "nummer": 68
       }
     ]
   },
@@ -572,7 +605,7 @@ const ORTSDATEN = [
     "lng": 7.6255215,
     "staende": [
       {
-        "nummer": 64
+        "nummer": 69
       }
     ]
   },
@@ -584,7 +617,7 @@ const ORTSDATEN = [
     "lng": 7.6253238,
     "staende": [
       {
-        "nummer": 65
+        "nummer": 70
       }
     ]
   },
@@ -596,7 +629,7 @@ const ORTSDATEN = [
     "lng": 7.623449,
     "staende": [
       {
-        "nummer": 66
+        "nummer": 71
       }
     ]
   },
@@ -608,7 +641,7 @@ const ORTSDATEN = [
     "lng": 7.6215406,
     "staende": [
       {
-        "nummer": 67
+        "nummer": 72
       }
     ]
   },
@@ -620,7 +653,7 @@ const ORTSDATEN = [
     "lng": 7.6222659,
     "staende": [
       {
-        "nummer": 68
+        "nummer": 73
       }
     ]
   },
@@ -632,7 +665,7 @@ const ORTSDATEN = [
     "lng": 7.6221059,
     "staende": [
       {
-        "nummer": 69
+        "nummer": 74
       }
     ]
   },
@@ -644,7 +677,7 @@ const ORTSDATEN = [
     "lng": 7.6221317,
     "staende": [
       {
-        "nummer": 70
+        "nummer": 75
       }
     ]
   },
@@ -656,7 +689,7 @@ const ORTSDATEN = [
     "lng": 7.6213878,
     "staende": [
       {
-        "nummer": 71
+        "nummer": 76
       }
     ]
   },
@@ -669,7 +702,7 @@ const ORTSDATEN = [
     "lng": 7.625568,
     "staende": [
       {
-        "nummer": 72
+        "nummer": 77
       }
     ]
   },
@@ -681,7 +714,7 @@ const ORTSDATEN = [
     "lng": 7.6227502,
     "staende": [
       {
-        "nummer": 73
+        "nummer": 78
       }
     ]
   },
@@ -693,7 +726,7 @@ const ORTSDATEN = [
     "lng": 7.6224411,
     "staende": [
       {
-        "nummer": 74
+        "nummer": 79
       }
     ]
   },
@@ -705,7 +738,7 @@ const ORTSDATEN = [
     "lng": 7.6226633,
     "staende": [
       {
-        "nummer": 75
+        "nummer": 80
       }
     ]
   },
@@ -717,7 +750,7 @@ const ORTSDATEN = [
     "lng": 7.6235221,
     "staende": [
       {
-        "nummer": 76
+        "nummer": 81
       }
     ]
   },
@@ -729,7 +762,7 @@ const ORTSDATEN = [
     "lng": 7.6236013,
     "staende": [
       {
-        "nummer": 77
+        "nummer": 82
       }
     ]
   },
@@ -741,7 +774,7 @@ const ORTSDATEN = [
     "lng": 7.6234813,
     "staende": [
       {
-        "nummer": 78
+        "nummer": 83
       }
     ]
   },
@@ -753,7 +786,7 @@ const ORTSDATEN = [
     "lng": 7.6243639,
     "staende": [
       {
-        "nummer": 79
+        "nummer": 84
       }
     ]
   },
@@ -765,7 +798,7 @@ const ORTSDATEN = [
     "lng": 7.6248218,
     "staende": [
       {
-        "nummer": 80
+        "nummer": 85
       }
     ]
   },
@@ -777,7 +810,7 @@ const ORTSDATEN = [
     "lng": 7.625211,
     "staende": [
       {
-        "nummer": 81
+        "nummer": 86
       }
     ]
   },
@@ -789,7 +822,7 @@ const ORTSDATEN = [
     "lng": 7.6250132,
     "staende": [
       {
-        "nummer": 82
+        "nummer": 87
       }
     ]
   },
@@ -801,7 +834,7 @@ const ORTSDATEN = [
     "lng": 7.6205221,
     "staende": [
       {
-        "nummer": 83
+        "nummer": 88
       }
     ]
   },
@@ -813,10 +846,10 @@ const ORTSDATEN = [
     "lng": 7.6192457,
     "staende": [
       {
-        "nummer": 84
+        "nummer": 89
       },
       {
-        "nummer": 85
+        "nummer": 90
       }
     ]
   },
@@ -828,7 +861,7 @@ const ORTSDATEN = [
     "lng": 7.6278797,
     "staende": [
       {
-        "nummer": 86
+        "nummer": 91
       }
     ]
   }
