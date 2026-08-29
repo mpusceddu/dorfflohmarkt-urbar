@@ -33,8 +33,8 @@ const ORTSDATEN = [
     "id": "remigiusstrasse-13a",
     "adresse": "Remigiusstraße 13a, 56182 Urbar",
     "typ": "privat",
-    "lat": 50.3857954,
-    "lng": 7.6247458,
+    "lat": 50.385582,
+    "lng": 7.623684,
     "staende": [
       {
         "nummer": 3
