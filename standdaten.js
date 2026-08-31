@@ -66,6 +66,18 @@ const ORTSDATEN = [
     ]
   },
   {
+    "id": "hilda-von-stedman-strasse-36",
+    "adresse": "Hilda-von-Stedman-Straße 36, 56182 Urbar",
+    "typ": "privat",
+    "lat": 50.384817,
+    "lng": 7.6255799,
+    "staende": [
+      {
+        "nummer": 6
+      }
+    ]
+  },
+  {
     "id": "franziskanerinnenstrasse-11",
     "adresse": "Franziskanerinnenstraße 11, 56182 Urbar",
     "typ": "mehrfach",
@@ -73,10 +85,10 @@ const ORTSDATEN = [
     "lng": 7.6266704,
     "staende": [
       {
-        "nummer": 6
+        "nummer": 7
       },
       {
-        "nummer": 7
+        "nummer": 8
       }
     ]
   },
@@ -88,10 +100,10 @@ const ORTSDATEN = [
     "lng": 7.624613,
     "staende": [
       {
-        "nummer": 8
+        "nummer": 9
       },
       {
-        "nummer": 9
+        "nummer": 10
       }
     ]
   },
@@ -103,7 +115,7 @@ const ORTSDATEN = [
     "lng": 7.6247377,
     "staende": [
       {
-        "nummer": 10
+        "nummer": 11
       }
     ]
   },
@@ -115,7 +127,7 @@ const ORTSDATEN = [
     "lng": 7.6244122,
     "staende": [
       {
-        "nummer": 11
+        "nummer": 12
       }
     ]
   },
@@ -127,7 +139,7 @@ const ORTSDATEN = [
     "lng": 7.6245818,
     "staende": [
       {
-        "nummer": 12
+        "nummer": 13
       }
     ]
   },
@@ -139,7 +151,7 @@ const ORTSDATEN = [
     "lng": 7.6245432,
     "staende": [
       {
-        "nummer": 13
+        "nummer": 14
       }
     ]
   },
@@ -151,7 +163,7 @@ const ORTSDATEN = [
     "lng": 7.6247929,
     "staende": [
       {
-        "nummer": 14
+        "nummer": 15
       }
     ]
   },
@@ -163,10 +175,10 @@ const ORTSDATEN = [
     "lng": 7.6240003,
     "staende": [
       {
-        "nummer": 15
+        "nummer": 16
       },
       {
-        "nummer": 16
+        "nummer": 17
       }
     ]
   },
@@ -178,13 +190,13 @@ const ORTSDATEN = [
     "lng": 7.6234669,
     "staende": [
       {
-        "nummer": 17
-      },
-      {
         "nummer": 18
       },
       {
         "nummer": 19
+      },
+      {
+        "nummer": 20
       }
     ]
   },
@@ -196,7 +208,7 @@ const ORTSDATEN = [
     "lng": 7.6233993,
     "staende": [
       {
-        "nummer": 20
+        "nummer": 21
       }
     ]
   },
@@ -208,7 +220,7 @@ const ORTSDATEN = [
     "lng": 7.6229251,
     "staende": [
       {
-        "nummer": 21
+        "nummer": 22
       }
     ]
   },
@@ -220,7 +232,7 @@ const ORTSDATEN = [
     "lng": 7.6230987,
     "staende": [
       {
-        "nummer": 22
+        "nummer": 23
       }
     ]
   },
@@ -232,10 +244,22 @@ const ORTSDATEN = [
     "lng": 7.6231637,
     "staende": [
       {
-        "nummer": 23
+        "nummer": 24
       },
       {
-        "nummer": 24
+        "nummer": 25
+      }
+    ]
+  },
+  {
+    "id": "hauptstrasse-87",
+    "adresse": "Hauptstraße 87, 56182 Urbar",
+    "typ": "privat",
+    "lat": 50.3818951,
+    "lng": 7.623063,
+    "staende": [
+      {
+        "nummer": 26
       }
     ]
   },
@@ -247,7 +271,7 @@ const ORTSDATEN = [
     "lng": 7.6235591,
     "staende": [
       {
-        "nummer": 25
+        "nummer": 27
       }
     ]
   },
@@ -259,31 +283,10 @@ const ORTSDATEN = [
     "lng": 7.6239695,
     "staende": [
       {
-        "nummer": 26
-      },
-      {
-        "nummer": 27
-      }
-    ]
-  },
-  {
-    "id": "in-den-bungerten-24",
-    "adresse": "In den Büngerten 24, 56182 Urbar",
-    "typ": "mehrfach",
-    "lat": 50.3827361,
-    "lng": 7.6239227,
-    "staende": [
-      {
         "nummer": 28
       },
       {
         "nummer": 29
-      },
-      {
-        "nummer": 30
-      },
-      {
-        "nummer": 31
       }
     ]
   },
@@ -295,7 +298,7 @@ const ORTSDATEN = [
     "lng": 7.6251249,
     "staende": [
       {
-        "nummer": 32
+        "nummer": 30
       }
     ]
   },
@@ -307,7 +310,7 @@ const ORTSDATEN = [
     "lng": 7.6260494,
     "staende": [
       {
-        "nummer": 33
+        "nummer": 31
       }
     ]
   },
@@ -319,7 +322,7 @@ const ORTSDATEN = [
     "lng": 7.626811,
     "staende": [
       {
-        "nummer": 34
+        "nummer": 32
       }
     ]
   },
@@ -331,10 +334,10 @@ const ORTSDATEN = [
     "lng": 7.6267393,
     "staende": [
       {
-        "nummer": 35
+        "nummer": 33
       },
       {
-        "nummer": 36
+        "nummer": 34
       }
     ]
   },
@@ -346,7 +349,7 @@ const ORTSDATEN = [
     "lng": 7.6257425,
     "staende": [
       {
-        "nummer": 37
+        "nummer": 35
       }
     ]
   },
@@ -358,7 +361,7 @@ const ORTSDATEN = [
     "lng": 7.6257201,
     "staende": [
       {
-        "nummer": 38
+        "nummer": 36
       }
     ]
   },
@@ -370,7 +373,7 @@ const ORTSDATEN = [
     "lng": 7.6253386,
     "staende": [
       {
-        "nummer": 39
+        "nummer": 37
       }
     ]
   },
@@ -382,7 +385,7 @@ const ORTSDATEN = [
     "lng": 7.6247846,
     "staende": [
       {
-        "nummer": 40
+        "nummer": 38
       }
     ]
   },
@@ -394,6 +397,12 @@ const ORTSDATEN = [
     "lat": 50.3814375,
     "lng": 7.6239305,
     "staende": [
+      {
+        "nummer": 39
+      },
+      {
+        "nummer": 40
+      },
       {
         "nummer": 41
       },
@@ -429,7 +438,16 @@ const ORTSDATEN = [
       },
       {
         "nummer": 52
-      },
+      }
+    ]
+  },
+  {
+    "id": "in-den-bungerten-4",
+    "adresse": "In den Büngerten 4, 56182 Urbar",
+    "typ": "privat",
+    "lat": 50.3808881,
+    "lng": 7.6246519,
+    "staende": [
       {
         "nummer": 53
       }
