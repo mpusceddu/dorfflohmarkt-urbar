@@ -30,18 +30,6 @@ const ORTSDATEN = [
     ]
   },
   {
-    "id": "remigiusstrasse-13a",
-    "adresse": "Remigiusstraße 13a, 56182 Urbar",
-    "typ": "privat",
-    "lat": 50.385582,
-    "lng": 7.624104,
-    "staende": [
-      {
-        "nummer": 3
-      }
-    ]
-  },
-  {
     "id": "hilda-von-stedman-strasse-1",
     "adresse": "Hilda-von-Stedman-Straße 1, 56182 Urbar",
     "typ": "privat",
@@ -49,7 +37,7 @@ const ORTSDATEN = [
     "lng": 7.6249798,
     "staende": [
       {
-        "nummer": 4
+        "nummer": 3
       }
     ]
   },
@@ -61,7 +49,7 @@ const ORTSDATEN = [
     "lng": 7.6265149,
     "staende": [
       {
-        "nummer": 5
+        "nummer": 4
       }
     ]
   },
@@ -73,7 +61,7 @@ const ORTSDATEN = [
     "lng": 7.6255799,
     "staende": [
       {
-        "nummer": 6
+        "nummer": 5
       }
     ]
   },
@@ -85,10 +73,10 @@ const ORTSDATEN = [
     "lng": 7.6266704,
     "staende": [
       {
-        "nummer": 7
+        "nummer": 6
       },
       {
-        "nummer": 8
+        "nummer": 7
       }
     ]
   },
@@ -100,10 +88,10 @@ const ORTSDATEN = [
     "lng": 7.624613,
     "staende": [
       {
-        "nummer": 9
+        "nummer": 8
       },
       {
-        "nummer": 10
+        "nummer": 9
       }
     ]
   },
@@ -115,7 +103,7 @@ const ORTSDATEN = [
     "lng": 7.6247377,
     "staende": [
       {
-        "nummer": 11
+        "nummer": 10
       }
     ]
   },
@@ -127,7 +115,7 @@ const ORTSDATEN = [
     "lng": 7.6244122,
     "staende": [
       {
-        "nummer": 12
+        "nummer": 11
       }
     ]
   },
@@ -139,7 +127,7 @@ const ORTSDATEN = [
     "lng": 7.6245818,
     "staende": [
       {
-        "nummer": 13
+        "nummer": 12
       }
     ]
   },
@@ -151,7 +139,7 @@ const ORTSDATEN = [
     "lng": 7.6245432,
     "staende": [
       {
-        "nummer": 14
+        "nummer": 13
       }
     ]
   },
@@ -163,7 +151,7 @@ const ORTSDATEN = [
     "lng": 7.6247929,
     "staende": [
       {
-        "nummer": 15
+        "nummer": 14
       }
     ]
   },
@@ -175,10 +163,10 @@ const ORTSDATEN = [
     "lng": 7.6240003,
     "staende": [
       {
-        "nummer": 16
+        "nummer": 15
       },
       {
-        "nummer": 17
+        "nummer": 16
       }
     ]
   },
@@ -190,13 +178,13 @@ const ORTSDATEN = [
     "lng": 7.6234669,
     "staende": [
       {
+        "nummer": 17
+      },
+      {
         "nummer": 18
       },
       {
         "nummer": 19
-      },
-      {
-        "nummer": 20
       }
     ]
   },
@@ -208,7 +196,7 @@ const ORTSDATEN = [
     "lng": 7.6233993,
     "staende": [
       {
-        "nummer": 21
+        "nummer": 20
       }
     ]
   },
@@ -220,7 +208,7 @@ const ORTSDATEN = [
     "lng": 7.6229251,
     "staende": [
       {
-        "nummer": 22
+        "nummer": 21
       }
     ]
   },
@@ -232,7 +220,7 @@ const ORTSDATEN = [
     "lng": 7.6230987,
     "staende": [
       {
-        "nummer": 23
+        "nummer": 22
       }
     ]
   },
@@ -244,10 +232,10 @@ const ORTSDATEN = [
     "lng": 7.6231637,
     "staende": [
       {
-        "nummer": 24
+        "nummer": 23
       },
       {
-        "nummer": 25
+        "nummer": 24
       }
     ]
   },
@@ -259,7 +247,7 @@ const ORTSDATEN = [
     "lng": 7.6227653,
     "staende": [
       {
-        "nummer": 26
+        "nummer": 25
       }
     ]
   },
@@ -271,7 +259,7 @@ const ORTSDATEN = [
     "lng": 7.623063,
     "staende": [
       {
-        "nummer": 27
+        "nummer": 26
       }
     ]
   },
@@ -283,7 +271,7 @@ const ORTSDATEN = [
     "lng": 7.6235591,
     "staende": [
       {
-        "nummer": 28
+        "nummer": 27
       }
     ]
   },
@@ -295,10 +283,10 @@ const ORTSDATEN = [
     "lng": 7.6239695,
     "staende": [
       {
-        "nummer": 29
+        "nummer": 28
       },
       {
-        "nummer": 30
+        "nummer": 29
       }
     ]
   },
@@ -310,7 +298,7 @@ const ORTSDATEN = [
     "lng": 7.6251249,
     "staende": [
       {
-        "nummer": 31
+        "nummer": 30
       }
     ]
   },
@@ -322,7 +310,7 @@ const ORTSDATEN = [
     "lng": 7.6260494,
     "staende": [
       {
-        "nummer": 32
+        "nummer": 31
       }
     ]
   },
@@ -334,7 +322,7 @@ const ORTSDATEN = [
     "lng": 7.626811,
     "staende": [
       {
-        "nummer": 33
+        "nummer": 32
       }
     ]
   },
@@ -346,10 +334,10 @@ const ORTSDATEN = [
     "lng": 7.6267393,
     "staende": [
       {
-        "nummer": 34
+        "nummer": 33
       },
       {
-        "nummer": 35
+        "nummer": 34
       }
     ]
   },
@@ -361,7 +349,7 @@ const ORTSDATEN = [
     "lng": 7.6257091,
     "staende": [
       {
-        "nummer": 36
+        "nummer": 35
       }
     ]
   },
@@ -373,7 +361,7 @@ const ORTSDATEN = [
     "lng": 7.6257425,
     "staende": [
       {
-        "nummer": 37
+        "nummer": 36
       }
     ]
   },
@@ -385,7 +373,7 @@ const ORTSDATEN = [
     "lng": 7.6257201,
     "staende": [
       {
-        "nummer": 38
+        "nummer": 37
       }
     ]
   },
@@ -397,7 +385,7 @@ const ORTSDATEN = [
     "lng": 7.6253386,
     "staende": [
       {
-        "nummer": 39
+        "nummer": 38
       }
     ]
   },
@@ -409,7 +397,7 @@ const ORTSDATEN = [
     "lng": 7.6247846,
     "staende": [
       {
-        "nummer": 40
+        "nummer": 39
       }
     ]
   },
@@ -421,6 +409,9 @@ const ORTSDATEN = [
     "lat": 50.3814375,
     "lng": 7.6239305,
     "staende": [
+      {
+        "nummer": 40
+      },
       {
         "nummer": 41
       },
@@ -459,9 +450,6 @@ const ORTSDATEN = [
       },
       {
         "nummer": 53
-      },
-      {
-        "nummer": 54
       }
     ]
   },
@@ -473,7 +461,7 @@ const ORTSDATEN = [
     "lng": 7.6246519,
     "staende": [
       {
-        "nummer": 55
+        "nummer": 54
       }
     ]
   },
@@ -485,7 +473,7 @@ const ORTSDATEN = [
     "lng": 7.6240174,
     "staende": [
       {
-        "nummer": 56
+        "nummer": 55
       }
     ]
   },
@@ -497,7 +485,7 @@ const ORTSDATEN = [
     "lng": 7.625472,
     "staende": [
       {
-        "nummer": 57
+        "nummer": 56
       }
     ]
   },
@@ -509,7 +497,7 @@ const ORTSDATEN = [
     "lng": 7.6262,
     "staende": [
       {
-        "nummer": 58
+        "nummer": 57
       }
     ]
   },
@@ -521,7 +509,7 @@ const ORTSDATEN = [
     "lng": 7.6260031,
     "staende": [
       {
-        "nummer": 59
+        "nummer": 58
       }
     ]
   },
@@ -533,7 +521,7 @@ const ORTSDATEN = [
     "lng": 7.6268805,
     "staende": [
       {
-        "nummer": 60
+        "nummer": 59
       }
     ]
   },
@@ -545,7 +533,7 @@ const ORTSDATEN = [
     "lng": 7.6271277,
     "staende": [
       {
-        "nummer": 61
+        "nummer": 60
       }
     ]
   },
@@ -557,7 +545,7 @@ const ORTSDATEN = [
     "lng": 7.6289658,
     "staende": [
       {
-        "nummer": 62
+        "nummer": 61
       }
     ]
   },
@@ -569,7 +557,7 @@ const ORTSDATEN = [
     "lng": 7.6291117,
     "staende": [
       {
-        "nummer": 63
+        "nummer": 62
       }
     ]
   },
@@ -581,7 +569,7 @@ const ORTSDATEN = [
     "lng": 7.6287645,
     "staende": [
       {
-        "nummer": 64
+        "nummer": 63
       }
     ]
   },
@@ -593,10 +581,10 @@ const ORTSDATEN = [
     "lng": 7.6291682,
     "staende": [
       {
-        "nummer": 65
+        "nummer": 64
       },
       {
-        "nummer": 66
+        "nummer": 65
       }
     ]
   },
@@ -608,7 +596,7 @@ const ORTSDATEN = [
     "lng": 7.6297509,
     "staende": [
       {
-        "nummer": 67
+        "nummer": 66
       }
     ]
   },
@@ -620,7 +608,7 @@ const ORTSDATEN = [
     "lng": 7.6286052,
     "staende": [
       {
-        "nummer": 68
+        "nummer": 67
       }
     ]
   },
@@ -632,7 +620,7 @@ const ORTSDATEN = [
     "lng": 7.6255215,
     "staende": [
       {
-        "nummer": 69
+        "nummer": 68
       }
     ]
   },
@@ -644,7 +632,7 @@ const ORTSDATEN = [
     "lng": 7.6253238,
     "staende": [
       {
-        "nummer": 70
+        "nummer": 69
       }
     ]
   },
@@ -656,7 +644,7 @@ const ORTSDATEN = [
     "lng": 7.623449,
     "staende": [
       {
-        "nummer": 71
+        "nummer": 70
       }
     ]
   },
@@ -668,7 +656,7 @@ const ORTSDATEN = [
     "lng": 7.6215406,
     "staende": [
       {
-        "nummer": 72
+        "nummer": 71
       }
     ]
   },
@@ -680,7 +668,7 @@ const ORTSDATEN = [
     "lng": 7.6222659,
     "staende": [
       {
-        "nummer": 73
+        "nummer": 72
       }
     ]
   },
@@ -692,7 +680,7 @@ const ORTSDATEN = [
     "lng": 7.6221059,
     "staende": [
       {
-        "nummer": 74
+        "nummer": 73
       }
     ]
   },
@@ -704,7 +692,7 @@ const ORTSDATEN = [
     "lng": 7.6221317,
     "staende": [
       {
-        "nummer": 75
+        "nummer": 74
       }
     ]
   },
@@ -716,7 +704,7 @@ const ORTSDATEN = [
     "lng": 7.6213878,
     "staende": [
       {
-        "nummer": 76
+        "nummer": 75
       }
     ]
   },
@@ -729,7 +717,7 @@ const ORTSDATEN = [
     "lng": 7.625568,
     "staende": [
       {
-        "nummer": 77
+        "nummer": 76
       }
     ]
   },
@@ -741,7 +729,7 @@ const ORTSDATEN = [
     "lng": 7.6227502,
     "staende": [
       {
-        "nummer": 78
+        "nummer": 77
       }
     ]
   },
@@ -753,7 +741,7 @@ const ORTSDATEN = [
     "lng": 7.6220867,
     "staende": [
       {
-        "nummer": 79
+        "nummer": 78
       }
     ]
   },
@@ -765,7 +753,7 @@ const ORTSDATEN = [
     "lng": 7.6226633,
     "staende": [
       {
-        "nummer": 80
+        "nummer": 79
       }
     ]
   },
@@ -777,7 +765,7 @@ const ORTSDATEN = [
     "lng": 7.6235221,
     "staende": [
       {
-        "nummer": 81
+        "nummer": 80
       }
     ]
   },
@@ -789,7 +777,7 @@ const ORTSDATEN = [
     "lng": 7.6236013,
     "staende": [
       {
-        "nummer": 82
+        "nummer": 81
       }
     ]
   },
@@ -801,7 +789,7 @@ const ORTSDATEN = [
     "lng": 7.6234813,
     "staende": [
       {
-        "nummer": 83
+        "nummer": 82
       }
     ]
   },
@@ -813,7 +801,7 @@ const ORTSDATEN = [
     "lng": 7.6243639,
     "staende": [
       {
-        "nummer": 84
+        "nummer": 83
       }
     ]
   },
@@ -825,7 +813,7 @@ const ORTSDATEN = [
     "lng": 7.6248218,
     "staende": [
       {
-        "nummer": 85
+        "nummer": 84
       }
     ]
   },
@@ -837,7 +825,7 @@ const ORTSDATEN = [
     "lng": 7.625211,
     "staende": [
       {
-        "nummer": 86
+        "nummer": 85
       }
     ]
   },
@@ -849,7 +837,7 @@ const ORTSDATEN = [
     "lng": 7.6250132,
     "staende": [
       {
-        "nummer": 87
+        "nummer": 86
       }
     ]
   },
@@ -861,7 +849,7 @@ const ORTSDATEN = [
     "lng": 7.6205221,
     "staende": [
       {
-        "nummer": 88
+        "nummer": 87
       }
     ]
   },
@@ -873,10 +861,10 @@ const ORTSDATEN = [
     "lng": 7.6192457,
     "staende": [
       {
-        "nummer": 89
+        "nummer": 88
       },
       {
-        "nummer": 90
+        "nummer": 89
       }
     ]
   },
@@ -888,7 +876,7 @@ const ORTSDATEN = [
     "lng": 7.6278797,
     "staende": [
       {
-        "nummer": 91
+        "nummer": 90
       }
     ]
   }
