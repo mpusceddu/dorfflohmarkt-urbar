@@ -314,7 +314,7 @@
       stand &&
       Number.isInteger(stand.nummer) &&
       stand.nummer >= 1 &&
-      stand.nummer <= 91
+      stand.nummer <= 90
     );
   }
 
