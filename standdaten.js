@@ -57,8 +57,8 @@ const ORTSDATEN = [
     "id": "hilda-von-stedman-strasse-36",
     "adresse": "Hilda-von-Stedman-Straße 36, 56182 Urbar",
     "typ": "privat",
-    "lat": 50.384817,
-    "lng": 7.6255799,
+    "lat": 50.3848137,
+    "lng": 7.6260307,
     "staende": [
       {
         "nummer": 5
