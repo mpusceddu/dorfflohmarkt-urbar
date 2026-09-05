@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ein Standfoto zum Dorfflohmarkt Urbar 2026 einreichen.">
+  <meta name="theme-color" content="#174d72">
+  <title>Standfoto einreichen · Dorfflohmarkt Urbar 2026</title>
+  <link rel="stylesheet" href="styles.css?v=20260905-foto2">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Zur Startseite des Dorfflohmarkts Urbar">
+      <span class="brand-kicker">5. Dorfflohmarkt</span>
+      <span class="brand-name">Urbar 2026</span>
+    </a>
+    <nav aria-label="Seitennavigation">
+      <a href="index.html">Start</a>
+      <a class="nav-highlight" href="index.html#karte">Interaktive Karte</a>
+    </nav>
+  </header>
+
+  <main class="photo-main">
+    <article class="photo-card">
+      <p class="eyebrow">Direkt vom Stand</p>
+      <h1>Ein Foto einreichen</h1>
+      <p class="photo-intro">Standbetreiber können hier genau ein aktuelles Foto ihres Standorts einreichen. Das Bild wird erst nach einer Prüfung veröffentlicht.</p>
+
+      <div class="photo-notice">
+        <strong>Bitte beachten:</strong> Fotografieren Sie nur Ihren Stand. Auf dem Bild dürfen keine erkennbaren Personen, fremden Kennzeichen oder privaten Unterlagen zu sehen sein.
+      </div>
+
+      <form id="photo-form" class="photo-form" enctype="multipart/form-data" novalidate>
+        <div class="form-field">
+          <label for="location-id">Standort auswählen</label>
+          <select id="location-id" name="locationId" required>
+            <option value="">Bitte auswählen</option>
+          </select>
+          <p class="field-help">Bei mehreren Ständen an derselben Adresse gilt ein gemeinsames Foto für den Standort.</p>
+        </div>
+
+        <div class="form-field">
+          <label for="photo-file">Foto auswählen oder aufnehmen</label>
+          <input id="photo-file" name="photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" capture="environment" required>
+          <p class="field-help">JPG, PNG oder WebP. Das Bild wird vor dem Versand verkleinert. Maximal 15 MB Ausgangsgröße.</p>
+        </div>
+
+        <figure id="photo-preview" class="photo-preview" aria-label="Vorschau des ausgewählten Fotos">
+          <img id="photo-preview-image" alt="Vorschau des ausgewählten Standfotos">
+        </figure>
+
+        <label class="photo-consent">
+          <input id="photo-rights" name="rights" type="checkbox" value="yes" required>
+          <span><strong>Ich darf dieses Foto einreichen.</strong><br>Ich bestätige, dass keine erkennbaren Personen ohne deren Einwilligung abgebildet sind, und bin mit der Veröffentlichung auf dorfflohmarkt-urbar.de einverstanden. Hinweise dazu stehen im <a href="datenschutz.html">Datenschutz</a>.</span>
+        </label>
+
+        <div id="turnstile-container" hidden></div>
+
+        <button id="photo-submit" class="button button-primary photo-submit" type="submit">Foto zur Prüfung senden</button>
+        <p id="photo-status" class="photo-status" aria-live="polite"></p>
+      </form>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <p><strong>Dorfflohmarkt Urbar 2026</strong></p>
+        <p>Ein Informationsangebot des Vereinsrings Urbar.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Rechtliche Hinweise">
+        <a href="hinweise.html">Teilnahme &amp; Verantwortlichkeit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="standdaten.js?v=20260905-39"></script>
+  <script src="foto-upload-config.js?v=20260905-foto2"></script>
+  <script src="foto-upload.js?v=20260905-foto2"></script>
+</body>
+</html>
