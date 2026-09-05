@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Alle Informationen und die interaktive Karte zum 5. Dorfflohmarkt in Urbar am 5. September 2026.">
+  <meta name="theme-color" content="#174d72">
+  <meta property="og:title" content="5. Dorfflohmarkt in Urbar">
+  <meta property="og:description" content="Am 5. September 2026 im ganzen Dorf. Weitere Informationen und interaktive Karte.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://dorfflohmarkt-urbar.de/assets/dorfflohmarkt-urbar-2026.jpg">
+  <title>Fototest · Dorfflohmarkt Urbar 2026</title>
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://tile.openstreetmap.org">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css?v=20260828-24">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#start" aria-label="Dorfflohmarkt Urbar – zum Seitenanfang">
+      <span class="brand-kicker">5. Dorfflohmarkt</span>
+      <span class="brand-name">Urbar 2026</span>
+    </a>
+    <nav aria-label="Hauptnavigation">
+      <a href="#start">Start</a>
+      <a href="#infos">Infos</a>
+      <a class="nav-highlight" href="#karte">Interaktive Karte</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="start" class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Save the date</p>
+        <h1 id="hero-title">Das ganze Dorf wird zum Flohmarkt.</h1>
+        <p class="hero-date">Samstag, 5. September 2026</p>
+        <p class="hero-intro">Stöbern, entdecken und miteinander ins Gespräch kommen – mitten in Urbar.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#karte">Karte ansehen</a>
+          <a class="button button-secondary" href="#infos">Mehr erfahren</a>
+        </div>
+      </div>
+      <figure class="hero-poster">
+        <img src="assets/dorfflohmarkt-urbar-2026.jpg" alt="Ankündigungsplakat: 5. Dorf-Flohmarkt in Urbar am 5. September 2026">
+      </figure>
+    </section>
+
+    <section id="infos" class="info-section" aria-labelledby="info-title">
+      <div>
+        <p class="eyebrow">Im ganzen Dorf</p>
+        <h2 id="info-title">Ein Dorf. Viele Schätze. Ein besonderer Tag.</h2>
+      </div>
+      <div class="info-grid">
+        <article>
+          <span class="info-number">01</span>
+          <h3>Samstag ist Flohmarkttag</h3>
+          <p>Am 5. September 2026 wird in ganz Urbar gestöbert, entdeckt und gehandelt.</p>
+        </article>
+        <article>
+          <span class="info-number">02</span>
+          <h3>Von Tür zu Tür auf Schatzsuche</h3>
+          <p>Private Höfe und gemeinsame Standorte laden im ganzen Dorf zum Entdecken ein.</p>
+        </article>
+        <article>
+          <span class="info-number">03</span>
+          <h3>Urbar in der Hosentasche</h3>
+          <p>Karte öffnen, eigenen Standort anzeigen und bequem den nächsten Stand finden – ohne App und Anmeldung.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="karte" class="map-area" aria-labelledby="map-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Orientierung</p>
+          <h2 id="map-title">Interaktive Karte</h2>
+        </div>
+        <p id="stand-count" class="stand-count" aria-live="polite">Noch keine Stände eingetragen</p>
+      </div>
+
+      <div class="location-tools">
+        <button id="locate-button" class="location-button" type="button">
+          <span class="location-symbol" aria-hidden="true">◎</span>
+          Meinen Standort anzeigen
+        </button>
+        <p id="location-status" class="location-status" aria-live="polite">
+          Standort wird nur nach Ihrer Freigabe bestimmt und nicht gespeichert.
+        </p>
+      </div>
+
+      <div class="map-search">
+        <label class="visually-hidden" for="stand-search">Standnummer oder Straße suchen</label>
+        <input id="stand-search" type="search" inputmode="search" autocomplete="off"
+          placeholder="Standnummer oder Straße suchen" aria-describedby="search-status">
+        <p id="search-status" aria-live="polite">Alle 91 Stände werden angezeigt.</p>
+      </div>
+
+      <button id="print-map-button" class="print-map-button" type="button">
+        Kartenvorlage drucken oder als PDF speichern
+      </button>
+
+      <div class="map-layout">
+        <section class="map-section" aria-label="Karte der Flohmarktstände">
+          <div id="map" role="application" aria-label="Interaktive Karte der Flohmarktstände"></div>
+          <noscript>Für die interaktive Karte muss JavaScript aktiviert sein.</noscript>
+        </section>
+
+        <aside class="stand-list-section" aria-labelledby="list-heading">
+          <h3 id="list-heading" class="visually-hidden">Karteninformationen</h3>
+
+          <details class="map-accordion">
+            <summary>Stände &amp; Orientierung</summary>
+            <div class="map-accordion-content">
+              <p id="empty-message">Die Standorte werden hier veröffentlicht, sobald sie feststehen.</p>
+              <ol id="stand-list" class="stand-list"></ol>
+            </div>
+          </details>
+
+          <details class="map-accordion">
+            <summary>Verpflegung &amp; Parken</summary>
+            <div class="map-accordion-content">
+              <ul id="service-list" class="service-list"></ul>
+            </div>
+          </details>
+        </aside>
+      </div>
+
+      <section class="qr-panel" aria-labelledby="qr-title">
+        <img src="assets/qr-dorfflohmarkt-urbar.svg" alt="QR-Code zur Internetseite dorfflohmarkt-urbar.de">
+        <div>
+          <p class="eyebrow">Karte mitnehmen</p>
+          <h3 id="qr-title">Scannen und unterwegs öffnen</h3>
+          <p>Der QR-Code führt dauerhaft zu <strong>dorfflohmarkt-urbar.de</strong>.</p>
+          <a class="location-action" href="assets/qr-dorfflohmarkt-urbar.svg" download>QR-Code herunterladen</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <p><strong>Dorfflohmarkt Urbar 2026</strong></p>
+        <p>Ein Informationsangebot des Vereinsrings Urbar.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Rechtliche Hinweise">
+        <a href="hinweise.html">Teilnahme &amp; Verantwortlichkeit</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+    <p class="footer-small">Kartendaten © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-Mitwirkende</a></p>
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="standdaten.js?v=20260905-39"></script>
+  <script src="foto-upload-config.js?v=20260905-foto2"></script>\n  <script src="app-foto-test.js?v=20260905-foto2"></script>
+</body>
+</html>
